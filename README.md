@@ -1,7 +1,7 @@
 # portfolio
 
 ## portfolio url
- https://console.firebase.google.com/project/portfolio-d9ccd/overview?pli=1
+https://portfolio-d9ccd.web.app/ 
 
 ## Project setup
 ```
