@@ -1,7 +1,7 @@
 # portfolio
 
 ## portfolio url
- https://seattle-academy-demo.firebaseapp.com/
+ https://console.firebase.google.com/project/portfolio-d9ccd/overview?pli=1
 
 ## Project setup
 ```
