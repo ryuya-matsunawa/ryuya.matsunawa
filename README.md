@@ -1,7 +1,7 @@
 # portfolio
 
 ## portfolio url
-https://portfolio-d9ccd.web.app/ 
+https://portfolio-d9ccd.web.app
 
 ## Project setup
 ```
@@ -24,4 +24,4 @@ npm run lint
 ```
 
 ### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).# portfolio
+See [Configuration Reference](https://cli.vuejs.org/config/).
