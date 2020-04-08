@@ -1,0 +1,53 @@
+<template>
+  <div id="aboutSection">
+      <div id="aboutTitle">
+          About Me
+      </div>
+      <div id="aboutExplain">
+          <p>
+              aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+          </p>
+      </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'About',
+  props: {
+    msg: String
+  }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+#aboutSection {
+    background-color: #F5F5F5;
+    text-align: center;
+    padding: 10px;
+}
+
+#aboutTitle {
+    color: #20879F;
+    font-weight: bold;
+    font-size: 18pt;
+}
+
+#aboutExplain {
+    font-size: 12pt;
+    color: #707070;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+a {
+  color: #42b983;
+}
+</style>
