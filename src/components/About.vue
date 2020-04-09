@@ -26,6 +26,7 @@ export default {
     background-color: #F5F5F5;
     text-align: center;
     padding: 10px;
+    height: 1000px;
 }
 
 #aboutTitle {
