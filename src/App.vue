@@ -103,6 +103,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  width: 100%;
   max-width: 768px;
   height: 1024px;
 }

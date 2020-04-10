@@ -24,7 +24,7 @@
 
 <script>
 import Menu from "../components/Menu.vue"
- 
+
 export default {
   name: "Header",
   components: {
@@ -42,6 +42,7 @@ export default {
   height: 40px;
   padding: 10px;
   box-sizing: border-box;
+  max-width: 768px;
 
   #headerButton {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -95,12 +96,13 @@ export default {
   #nav-close {
     display: none;/* はじめは隠しておく */
     position: fixed;
-    z-index: 99;
+    z-index: 100;
     top: 0;/* 全体に広がるように */
-    left: 0;
+    right: 0;
     width: 100%;
-    height: 100%;
-    background: black;
+    max-width: 40px;
+    height: 40px;
+    background-color: #f3f3f3;
     opacity: 0;
     transition: 0.3s ease-in-out;
   }
@@ -111,9 +113,9 @@ export default {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 9999;/* 最前面に */
-    width: 90%;/* 右側に隙間を作る */
-    max-width: 330px;/* 最大幅 */
+    z-index: 99;/* 最前面に */
+    width: 100%;/* 右側に隙間を作る */
+    max-width: 768px;/* 最大幅 */
     height: 100%;
     background: #fff;/* 背景色 */
     transition: 0.3s ease-in-out;/* 滑らかに表示 */

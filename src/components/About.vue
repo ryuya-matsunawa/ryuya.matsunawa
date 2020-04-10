@@ -5,19 +5,16 @@
     </div>
     <div id="aboutExplain">
       <p>
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        千葉出身の新入社員です。大学、大学院共に数学を学んでいました。学生のうちは、
+        プログラミングの勉強をしたり、友達の勧めでライティングゼミにも通っていました。
+        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
       </p>
     </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'About',
-  props: {
-    msg: String
-  }
-}
+
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -27,8 +24,9 @@ export default {
 #aboutSection {
   background-color: #f5f5f5;
   text-align: center;
-  padding: 10px;
-  height: 1000px;
+  padding: 20px 0;
+  height: 500px;
+  width: 100%;
 }
 
 #aboutTitle {
@@ -36,12 +34,17 @@ export default {
   font-weight: bold;
   font-size: 18pt;
   font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  padding-bottom: 10px;
 }
 
 #aboutExplain {
   font-size: 12pt;
   color: #707070;
   font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+  line-height: 1.5;
+  word-break: break-all;
+  margin: auto;
+  width: 75%;
 }
 
 ul {

@@ -11,26 +11,28 @@
       >
         <a
           id="drawerMenuItemLink"
-          href="#"
-        >・Home</a>
+          href="#app"
+          @click="clickSmoothScroll()"
+        >Home</a>
+      </li>
+      <li id="drawerMenuItem">
+        <a
+          id="drawerMenuItemLink"
+          href="#aboutSection"
+          @click="clickSmoothScroll()"
+        >About Me</a>
       </li>
       <li id="drawerMenuItem">
         <a
           id="drawerMenuItemLink"
           href="#"
-        >・About Me</a>
+        >Skill Sets</a>
       </li>
       <li id="drawerMenuItem">
         <a
           id="drawerMenuItemLink"
           href="#"
-        >・Skill Sets</a>
-      </li>
-      <li id="drawerMenuItem">
-        <a
-          id="drawerMenuItemLink"
-          href="#"
-        >・Vision</a>
+        >Vision</a>
       </li>
     </ul>
   </div>
@@ -38,9 +40,18 @@
 
 <script>
 export default {
-  name: 'Menu',
-  props: {
-    msg: String
+
+  methods: {
+    clickSmoothScroll () {
+      event.preventDefault()
+      this.$SmoothScroll(
+        document.querySelector('#hoge'),
+        400,
+        null,
+        null,
+        'y'
+      )
+    }
   }
 }
 </script>
@@ -52,9 +63,22 @@ export default {
 #drawerSection {
   background-color: #f3f3f3;
   width: 100%;
+  height: 40px;
 
   #drawerButton {
-    text-align: right;
+    background-color: #f3f3f3;
+    width: 100%;
+    max-width: 768px;
+    height: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+
+  img {
+    float: right;
+    width: 40px;
+    height: 40px;
   }
 
   .css-cancel {
@@ -87,6 +111,10 @@ export default {
     height: 0 auto;
   }
 
+  #drawerMenuSection {
+    margin-top: 40px;
+  }
+
   #drawerMenuItem {
     height: 50px;
     border-bottom: 0.1px solid #707070;
@@ -99,6 +127,10 @@ export default {
     font-size: 12px;
     font-weight: bold;
     border-bottom: 2px solid #fff;
+    text-decoration: none; /* リンクの下線消す */
+    display: block; /* リンクの範囲広くするため */
+    position: relative; /* 文字を移動できるように */
+    top: 10px; /* 上から10px移動する */
   }
 }
 
