@@ -1,12 +1,15 @@
 <template>
   <div id="mainSection">
     <div id="userName">
-        R.Matsunawa
+      R.Matsunawa
     </div>
     <div id="companyName">
-        Seattleconsulting
+      Seattleconsulting
     </div>
-    <img id="profilePicture" src="../assets/sample.png">
+    <img
+      id="profilePicture"
+      src="../assets/sample.png"
+    >
   </div>
 </template>
 
@@ -24,28 +27,29 @@ export default {
 @import url(//fonts.googleapis.com/earlyaccess/notosansjapanese.css);
 
 #mainSection {
-    background: linear-gradient(180deg, #80E1F7, #06C1E6);
-    padding-bottom: 30px;
-    text-align: center;
+  background: linear-gradient(180deg, #80e1f7, #06c1e6);
+  padding-bottom: 30px;
+  text-align: center;
 
-    #userName, #companyName {
-        color: #FFFFFF;
-        font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-        font-weight: bold;
-        font-size: 18pt;
-        text-shadow: 0px 0.5px 2px black;
-        padding: 20px 0;
-        }
+  #userName,
+  #companyName {
+    color: #fff;
+    font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    font-weight: bold;
+    font-size: 18pt;
+    text-shadow: 0 0.5px 2px black;
+    padding: 20px 0;
+  }
 
-    #userName {
-        border-bottom: 1px solid#FFFFFF;
-        }
+  #userName {
+    border-bottom: 1px solid#fff;
+  }
 
-    #profilePicture {
-        border-radius: 50%;
-        width: 64px;
-        height: 64px;
-        }
+  #profilePicture {
+    border-radius: 50%;
+    width: 64px;
+    height: 64px;
+  }
 }
 
 </style>

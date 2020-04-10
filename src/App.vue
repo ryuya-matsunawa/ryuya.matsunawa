@@ -1,17 +1,21 @@
 <template>
-  
   <div>
     <div id="app">
-    <Header />
-    <Main />
-    <About />
-    <Skill />
-    <Vision />
-    <Footer />
-  </div>
+      <Header />
+      <Main />
+      <About />
+      <Skill />
+      <Vision />
+      <Footer />
+    </div>
     <transition name="fade">
-      <a href="#" v-scroll-to="'#top'" class="scroll-top" v-show="isShow">
-        <i class="fa fa-angle-up fa-lg scroll-top__ico"></i>
+      <a
+        v-show="isShow"
+        v-scroll-to="'#top'"
+        href="#app"
+        class="scroll-top"
+      >
+        <i class="fa fa-angle-up fa-lg scroll-top__ico" />
       </a>
     </transition>
   </div>
@@ -49,17 +53,17 @@ export default {
       scrollY: 0
     };
   },
+  computed: {
+    isShow() {
+      return this.scrollY > 200 ? true : false;
+    }
+  },
   mounted() {
     // スクロールを取得
     window.addEventListener("scroll", this.onScroll);
     window.addEventListener("load", () => {
       this.onScroll();
     });
-  },
-  computed: {
-    isShow() {
-      return this.scrollY > 200 ? true : false;
-    }
   },
   methods: {
     // スクロール値の取得
@@ -73,21 +77,22 @@ export default {
 <style lang="scss">
 .scroll-top {
   position: fixed;
-  bottom: 32px;
-  right: 32px;
   background-color: #000;
   padding: 10px 16px;
   border-radius: 32px;
+
   &__ico {
     font-weight: bold;
     font-size: 20px;
     color: #fff;
   }
 }
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
 }
+
 .fade-enter,
 .fade-leave-to {
   opacity: 0;
@@ -99,8 +104,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   max-width: 768px;
-  max-height:1024px;
+  height: 1024px;
 }
-
 
 </style>
