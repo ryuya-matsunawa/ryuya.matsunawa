@@ -7,7 +7,7 @@
       <p>
         千葉出身の新入社員です。大学、大学院共に数学を学んでいました。学生のうちは、
         プログラミングの勉強をしたり、友達の勧めでライティングゼミにも通っていました。
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        AIに興味があり、pythonの勉強をしようと考えています。
       </p>
     </div>
   </div>
@@ -24,8 +24,8 @@
 #aboutSection {
   background-color: #f5f5f5;
   text-align: center;
-  padding: 20px 0;
-  height: 500px;
+  padding: 40px 0;
+  height: 300px;
   width: 100%;
 }
 

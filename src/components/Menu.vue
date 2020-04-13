@@ -25,13 +25,15 @@
       <li id="drawerMenuItem">
         <a
           id="drawerMenuItemLink"
-          href="#"
+          href="#skillSection"
+          @click="clickSmoothScroll()"
         >Skill Sets</a>
       </li>
       <li id="drawerMenuItem">
         <a
           id="drawerMenuItemLink"
-          href="#"
+          href="#visionSection"
+          @click="clickSmoothScroll()"
         >Vision</a>
       </li>
     </ul>
@@ -45,10 +47,8 @@ export default {
     clickSmoothScroll () {
       event.preventDefault()
       this.$SmoothScroll(
-        document.querySelector('#hoge'),
+        document.querySelector('#app'),
         400,
-        null,
-        null,
         'y'
       )
     }

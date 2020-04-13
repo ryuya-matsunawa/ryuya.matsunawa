@@ -43,6 +43,9 @@ export default {
   padding: 10px;
   box-sizing: border-box;
   max-width: 768px;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
 
   #headerButton {
     font-family: 'Avenir', Helvetica, Arial, sans-serif;
