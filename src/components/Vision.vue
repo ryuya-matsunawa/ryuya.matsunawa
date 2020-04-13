@@ -5,9 +5,9 @@
     </div>
     <div id="visionExplain">
       <p>
-        千葉出身の新入社員です。大学、大学院共に数学を学んでいました。学生のうちは、
-        プログラミングの勉強をしたり、友達の勧めでライティングゼミにも通っていました。
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        AIエンジニアになることを目標としています。
+        まずは、開発の色々な工程を経験して、オールラウンドに対応できる力をつけたいです。
+        広く浅くスキルを身に付けたら、そこから主にバックエンドの知識を深めていくつもりです。
       </p>
     </div>
   </div>
@@ -25,7 +25,7 @@
   background-color: #f5f5f5;
   text-align: center;
   padding: 20px 0;
-  height: 500px;
+  height: 300px;
   width: 100%;
 }
 

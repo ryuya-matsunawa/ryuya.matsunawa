@@ -3,6 +3,12 @@
     <div id="userName">
       R.Matsunawa
     </div>
+    <hr
+      width="20%"
+      align="center"
+      size="1"
+      color="#f3f3f3"
+    >
     <div id="companyName">
       Seattleconsulting
     </div>
@@ -25,6 +31,7 @@
   background: linear-gradient(180deg, #80e1f7, #06c1e6);
   padding-bottom: 30px;
   text-align: center;
+  margin-top: 40px;
 
   #userName,
   #companyName {
@@ -36,14 +43,14 @@
     padding: 20px 0;
   }
 
-  #userName {
-    border-bottom: 1px solid#fff;
-  }
-
   #profilePicture {
     border-radius: 50%;
     width: 64px;
     height: 64px;
+  }
+
+  hr {
+    display: inline-block;
   }
 }
 

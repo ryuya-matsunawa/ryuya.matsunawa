@@ -6,6 +6,7 @@
       <About />
       <Skill />
       <Vision />
+      <sample />
       <Footer />
     </div>
     <transition name="fade">
@@ -27,6 +28,7 @@ import Main from './components/Main.vue'
 import About from './components/About.vue'
 import Skill from './components/Skill.vue'
 import Vision from './components/Vision.vue'
+import sample from './components/sample.vue'
 import Footer from './components/Footer.vue'
 import Vue from "vue";
 import VueScrollTo from "vue-scrollto";
@@ -46,6 +48,7 @@ export default {
     About,
     Skill,
     Vision,
+    sample,
     Footer
   },
   data() {
@@ -77,9 +80,10 @@ export default {
 <style lang="scss">
 .scroll-top {
   position: fixed;
-  background-color: #000;
+  background-color: blue;
   padding: 10px 16px;
-  border-radius: 32px;
+  border-radius: 500px;
+  display: none;
 
   &__ico {
     font-weight: bold;
