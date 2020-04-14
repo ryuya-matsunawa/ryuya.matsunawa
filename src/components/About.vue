@@ -7,7 +7,6 @@
       <p>
         千葉出身の新入社員です。大学、大学院共に数学を学んでいました。学生のうちは、
         プログラミングの勉強をしたり、友達の勧めでライティングゼミにも通っていました。
-        AIに興味があり、pythonの勉強をしようと考えています。
       </p>
     </div>
   </div>
@@ -27,6 +26,8 @@
   padding: 40px 0;
   height: 300px;
   width: 100%;
+  padding-top: 60px;
+  margin-top: -60px;
 }
 
 #aboutTitle {
@@ -35,6 +36,7 @@
   font-size: 18pt;
   font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   padding-bottom: 10px;
+  text-shadow: 0 0 2px gray;
 }
 
 #aboutExplain {
@@ -45,6 +47,7 @@
   word-break: break-all;
   margin: auto;
   width: 75%;
+  text-align: left;
 }
 
 ul {

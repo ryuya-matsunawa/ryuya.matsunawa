@@ -3,11 +3,10 @@
     <span
       id="drawerButton"
       class="css-bar"
-    ><img src="../assets/back.png"></span>
+    />
     <ul id="drawerMenuSection">
       <li
         id="drawerMenuItem"
-        style="list-style: disc;"
       >
         <a
           id="drawerMenuItemLink"
@@ -42,7 +41,11 @@
 
 <script>
 export default {
-
+  data(){
+    return {
+      isActive: true
+    }
+  },
   methods: {
     clickSmoothScroll () {
       event.preventDefault()
@@ -50,7 +53,8 @@ export default {
         document.querySelector('#app'),
         400,
         'y'
-      )
+      );
+      this.$emit('sample')
     }
   }
 }
@@ -63,45 +67,15 @@ export default {
 #drawerSection {
   background-color: #f3f3f3;
   width: 100%;
-  height: 40px;
 
   #drawerButton {
     background-color: #f3f3f3;
     width: 100%;
     max-width: 768px;
-    height: 40px;
+    height: 60px;
     position: fixed;
     top: 0;
     left: 0;
-  }
-
-  img {
-    float: right;
-    width: 40px;
-    height: 40px;
-  }
-
-  .css-cancel {
-    display: inline-block;
-    position: relative;
-    margin: 0 20px 0 7px;
-    padding: 0;
-    width: 4px;
-    height: 20px;
-    background: #000;
-    transform: rotate(45deg);
-  }
-
-  .css-cancel::before {
-    display: block;
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: -8px;
-    width: 20px;
-    height: 4px;
-    margin-top: -2px;
-    background: #000;
   }
 
   #drawerMenuSection,
@@ -112,7 +86,7 @@ export default {
   }
 
   #drawerMenuSection {
-    margin-top: 40px;
+    margin-top: 60px;
   }
 
   #drawerMenuItem {
@@ -131,6 +105,10 @@ export default {
     display: block; /* リンクの範囲広くするため */
     position: relative; /* 文字を移動できるように */
     top: 10px; /* 上から10px移動する */
+
+    a {
+      height: 100%;
+    }
   }
 }
 

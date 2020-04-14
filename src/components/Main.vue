@@ -29,9 +29,10 @@
 
 #mainSection {
   background: linear-gradient(180deg, #80e1f7, #06c1e6);
-  padding-bottom: 30px;
+  padding: 120px 0;
   text-align: center;
-  margin-top: 40px;
+  margin: -40px 0;
+  height: auto;
 
   #userName,
   #companyName {
@@ -39,7 +40,7 @@
     font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
     font-weight: bold;
     font-size: 18pt;
-    text-shadow: 0 0.5px 2px black;
+    text-shadow: 0 0 6px gray;
     padding: 20px 0;
   }
 

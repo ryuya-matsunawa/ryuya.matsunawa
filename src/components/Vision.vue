@@ -35,6 +35,7 @@
   font-size: 18pt;
   font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   padding-bottom: 10px;
+  text-shadow: 0 0 6px gray;
 }
 
 #visionExplain {
@@ -45,6 +46,7 @@
   word-break: break-all;
   margin: auto;
   width: 75%;
+  text-align: left;
 }
 
 ul {

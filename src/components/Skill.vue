@@ -5,11 +5,13 @@
     </div>
     <div id="skillExplain">
       <p>
-        説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。
-        説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。
-        説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。
-        説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。
-        説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。説明文が入ります。
+        スキルをまとめました。フロントエンドのスキルはポートフォリオ実装でかなり力がつきました。
+        特に、Vue.jsは内定者課題で使おうとしていて、理解できなかったものでしたが、
+        今回の実装である程度理解できました。Backendに関してはまだまだ経験不足で
+        今後学ぶものとしてリストアップしています。Pythonを今後特に知識を深めていきたいです。<br>
+        下のグラフの評価基準として、Front-endはポートフォリオ実装でどれだけ使えたか(1~5段階)、
+        Back-endは今までどれだけ使ったことがあるか(1~5段階)、DevOpsはBack-endと同じですが、
+        ほとんど差がないので(1~3段階)とさせていただきます。
       </p>
     </div>
     <label id="gitHubLabel">
@@ -55,6 +57,7 @@
         <li>HTML</li>
         <li>CSS</li>
         <li>Javascript</li>
+        <li>jQuery</li>
         <li>SCSS</li>
         <li>Vue</li>
       </ul>
@@ -66,6 +69,7 @@
         <li>Ruby</li>
         <li>RubyOnRails</li>
         <li>MySQL</li>
+        <li>Python</li>
       </ul>
       <ul
         id="devops"
@@ -75,6 +79,7 @@
         <li>Git</li>
         <li>GitHub</li>
         <li>Firebase</li>
+        <li>AWS</li>
       </ul>
     </div>
     <div
@@ -116,13 +121,19 @@ export default {
   },
   methods: {
     F_change(){
-      this.frontChange=!this.frontChange
+      this.frontChange=!this.frontChange,
+      this.backChange=false,
+      this.devChange=false
     },
     B_change(){
-      this.backChange=!this.backChange
+      this.backChange=!this.backChange,
+      this.frontChange=false,
+      this.devChange=false
     },
     D_change(){
-      this.devChange=!this.devChange
+      this.devChange=!this.devChange,
+      this.backChange=false,
+      this.frontChange=false
     }
   }
 }
@@ -136,7 +147,8 @@ export default {
   height: auto;
   background-color: #fff;
   text-align: center;
-  padding: 20px 0;
+  padding: 60px 0;
+  margin-top: -80px;
 
   #skillTitle {
     color: #20879f;
@@ -144,6 +156,7 @@ export default {
     font-size: 18pt;
     font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
     padding-bottom: 10px;
+    text-shadow: 0 0 6px gray;
   }
 
   #skillExplain {
@@ -153,6 +166,7 @@ export default {
     line-height: 1.5;
     word-break: break-all;
     margin: auto;
+    text-align: left;
     width: 75%;
     padding-bottom: 10px;
   }
@@ -167,6 +181,11 @@ export default {
 
   #skillCategories {
     padding: 20px 0;
+
+    li {
+      display: inline-block;
+      margin: 0 10px;
+    }
 
     #front {
       color: #b51a1a;
@@ -193,6 +212,7 @@ export default {
 
     li {
       display: inline-block;
+      margin: 10px 10px;
     }
 
     .front-change li {
