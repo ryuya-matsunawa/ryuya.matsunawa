@@ -15,7 +15,6 @@
 
 <script>
 export default {
-
   methods: {
     clickSmoothScroll () {
       event.preventDefault()

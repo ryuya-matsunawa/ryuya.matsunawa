@@ -8,16 +8,16 @@ export default {
   data () {
     return {
       data: {
-        labels: ['HTML', 'CSS', 'Javascript', 'SCSS'],
+        labels: ['Linux', 'Git', 'GitHub', 'Firebase','AWS'],
         datasets: [
           {
-            label: 'Front-end',
-            data: [10, 20, 30, 40],
+            label: 'DevOps',
+            data: [20, 20, 30, 20, 30],
             backgroundColor: [
               'rgba(87, 16, 131, 0.25)'
             ],
             borderColor: [
-              'rgba(255, 99, 132, 1)',
+              'rgba(87, 16, 131, 1)',
               'rgba(54, 162, 235, 1)',
               'rgba(255, 206, 86, 1)',
               'rgba(75, 192, 192, 1)',
@@ -31,7 +31,7 @@ export default {
 	scale:{
 		ticks:{
 			beginAtZero:true,
-			max:50,
+			max:30,
 			min:0
 		}
 	}

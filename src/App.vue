@@ -1,7 +1,7 @@
 <template>
   <div>
     <div id="app">
-      <Header />
+      <Header @closemenu="closemenu" />
       <Main />
       <About />
       <Skill />
@@ -90,16 +90,6 @@ export default {
     font-size: 20px;
     color: #fff;
   }
-}
-
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
 }
 
 #app {
