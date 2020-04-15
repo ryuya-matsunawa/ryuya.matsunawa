@@ -1,12 +1,11 @@
 <template>
   <div>
     <div id="app">
-      <Header @closemenu="closemenu" />
+      <Header />
       <Main />
       <About />
       <Skill />
       <Vision />
-      <sample />
       <Footer />
     </div>
     <transition name="fade">
@@ -28,7 +27,6 @@ import Main from './components/Main.vue'
 import About from './components/About.vue'
 import Skill from './components/Skill.vue'
 import Vision from './components/Vision.vue'
-import sample from './components/sample.vue'
 import Footer from './components/Footer.vue'
 import Vue from "vue";
 import VueScrollTo from "vue-scrollto";
@@ -48,7 +46,6 @@ export default {
     About,
     Skill,
     Vision,
-    sample,
     Footer
   },
   data() {
@@ -100,6 +97,12 @@ export default {
   width: 100%;
   max-width: 768px;
   height: 1024px;
+}
+
+@media (max-width: 1024px) {
+  #app {
+    width: 100%;
+  }
 }
 
 </style>

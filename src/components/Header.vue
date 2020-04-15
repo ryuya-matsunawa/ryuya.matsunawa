@@ -37,7 +37,6 @@ export default {
     },
     menuClose(){
       this.isActive=false
-      this.$emit('closemenu')
     }
   }
 }

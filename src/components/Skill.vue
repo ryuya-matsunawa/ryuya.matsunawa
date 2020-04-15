@@ -8,7 +8,7 @@
         スキルをまとめました。フロントエンドのスキルはポートフォリオ実装でかなり力がつきました。
         特に、Vue.jsは内定者課題で使おうとしていて、理解できなかったものでしたが、
         今回の実装である程度理解できました。Backendに関してはまだまだ経験不足で
-        今後学ぶものとしてリストアップしています。Pythonを今後特に知識を深めていきたいです。<br>
+        今後学ぶものとしてリストアップしています。AIに興味があるので、特にPythonの知識を深めていきたいです。<br>
         下のグラフの評価基準として、Front-endはポートフォリオ実装でどれだけ使えたか(1~5段階)、
         Back-endは今までどれだけ使ったことがあるか(1~5段階)、DevOpsはBack-endと同じですが、
         ほとんど差がないので(1~3段階)とさせていただきます。
@@ -26,7 +26,7 @@
         <li>
           <span
             id="front"
-            @click="F_change"
+            @click="frontChange"
           >
             Front-end
           </span>
@@ -34,7 +34,7 @@
         <li>
           <span
             id="back"
-            @click="B_change"
+            @click="backChange"
           >
             Back-end
           </span>
@@ -42,7 +42,7 @@
         <li>
           <span
             id="DevOps"
-            @click="D_change"
+            @click="devChange"
           >
             DevOps
           </span>
@@ -52,7 +52,7 @@
     <div id="skillList">
       <ul
         id="front-end"
-        :class="{'front-change': frontChange}"
+        :class="{'front-change': frontchange}"
       >
         <li>HTML</li>
         <li>CSS</li>
@@ -63,7 +63,7 @@
       </ul>
       <ul
         id="back-end"
-        :class="{'back-change': backChange}"
+        :class="{'back-change': backchange}"
       >
         <li>Java</li>
         <li>Ruby</li>
@@ -73,7 +73,7 @@
       </ul>
       <ul
         id="devops"
-        :class="{'dev-change': devChange}"
+        :class="{'dev-change': devchange}"
       >
         <li>Linux</li>
         <li>Git</li>
@@ -83,17 +83,17 @@
       </ul>
     </div>
     <div
-      v-if="frontChange"
+      v-if="frontchange"
     >
       <FrontChart />
     </div>
     <div
-      v-if="backChange"
+      v-if="backchange"
     >
       <BackChart />
     </div>
     <div
-      v-if="devChange"
+      v-if="devchange"
     >
       <DevChart />
     </div>
@@ -114,26 +114,26 @@ export default {
   },
   data(){
     return {
-      frontChange: true,
-      backChange: false,
-      devChange: false
+      frontchange: true,
+      backchange: false,
+      devchange: false
     }
   },
   methods: {
-    F_change(){
-      this.frontChange=!this.frontChange,
-      this.backChange=false,
-      this.devChange=false
+    frontChange(){
+      this.frontchange=true,
+      this.backchange=false,
+      this.devchange=false
     },
-    B_change(){
-      this.backChange=!this.backChange,
-      this.frontChange=false,
-      this.devChange=false
+    backChange(){
+      this.frontchange=false,
+      this.backchange=true,
+      this.devchange=false
     },
-    D_change(){
-      this.devChange=!this.devChange,
-      this.backChange=false,
-      this.frontChange=false
+    devChange(){
+      this.frontchange=false,
+      this.backchange=false,
+      this.devchange=true
     }
   }
 }
