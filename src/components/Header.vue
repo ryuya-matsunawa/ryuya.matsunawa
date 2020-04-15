@@ -47,7 +47,6 @@ export default {
 
 #headerSection {
   background-color: #f3f3f3;
-  max-width: 768px;
   width: 100%;
   height: 60px;
   padding: 10px;
@@ -57,11 +56,10 @@ export default {
   top: 0;
 
   nav {
-    max-width: 768px;
     width: 100%;
     height: 100%;
-    transition: all 0.2s;
-    transform: translate(-768px);
+    transition: all 0.5s;
+    transform: translate(-100%);
     position: fixed;
     top: 0;
     left: 0;

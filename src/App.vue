@@ -1,23 +1,11 @@
 <template>
-  <div>
-    <div id="app">
-      <Header />
-      <Main />
-      <About />
-      <Skill />
-      <Vision />
-      <Footer />
-    </div>
-    <transition name="fade">
-      <a
-        v-show="isShow"
-        v-scroll-to="'#top'"
-        href="#app"
-        class="scroll-top"
-      >
-        <i class="fa fa-angle-up fa-lg scroll-top__ico" />
-      </a>
-    </transition>
+  <div id="app">
+    <Header />
+    <Main />
+    <About />
+    <Skill />
+    <Vision />
+    <Footer />
   </div>
 </template>
 
@@ -28,15 +16,6 @@ import About from './components/About.vue'
 import Skill from './components/Skill.vue'
 import Vision from './components/Vision.vue'
 import Footer from './components/Footer.vue'
-import Vue from "vue";
-import VueScrollTo from "vue-scrollto";
-
-
-Vue.use(VueScrollTo, {
-  container: "body",
-  duration: 500,
-  easing: "ease"
-});
 
 export default {
   name: 'App',
@@ -47,47 +26,11 @@ export default {
     Skill,
     Vision,
     Footer
-  },
-  data() {
-    return {
-      scrollY: 0
-    };
-  },
-  computed: {
-    isShow() {
-      return this.scrollY > 200 ? true : false;
-    }
-  },
-  mounted() {
-    // スクロールを取得
-    window.addEventListener("scroll", this.onScroll);
-    window.addEventListener("load", () => {
-      this.onScroll();
-    });
-  },
-  methods: {
-    // スクロール値の取得
-    onScroll() {
-      this.scrollY = window.pageYOffset;
-    }
   }
 };
 </script>
 
 <style lang="scss">
-.scroll-top {
-  position: fixed;
-  background-color: blue;
-  padding: 10px 16px;
-  border-radius: 500px;
-  display: none;
-
-  &__ico {
-    font-weight: bold;
-    font-size: 20px;
-    color: #fff;
-  }
-}
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -95,11 +38,21 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   width: 100%;
-  max-width: 768px;
   height: 1024px;
+  box-sizing: border-box;
 }
 
 @media (max-width: 1024px) {
+  #app {
+    width: 100%;
+  }
+
+  #aboutExplain {
+    width: 60%;
+  }
+}
+
+@media (max-width: 768px) {
   #app {
     width: 100%;
   }

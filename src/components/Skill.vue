@@ -26,7 +26,7 @@
         <li>
           <span
             id="front"
-            @click="frontChange"
+            @click="setCurrentChart('front')"
           >
             Front-end
           </span>
@@ -34,7 +34,7 @@
         <li>
           <span
             id="back"
-            @click="backChange"
+            @click="setCurrentChart('back')"
           >
             Back-end
           </span>
@@ -42,7 +42,7 @@
         <li>
           <span
             id="DevOps"
-            @click="devChange"
+            @click="setCurrentChart('devops')"
           >
             DevOps
           </span>
@@ -52,7 +52,7 @@
     <div id="skillList">
       <ul
         id="front-end"
-        :class="{'front-change': frontchange}"
+        :class="{'front-change': isFrontActive}"
       >
         <li>HTML</li>
         <li>CSS</li>
@@ -63,7 +63,7 @@
       </ul>
       <ul
         id="back-end"
-        :class="{'back-change': backchange}"
+        :class="{'back-change': isBackActive}"
       >
         <li>Java</li>
         <li>Ruby</li>
@@ -73,7 +73,7 @@
       </ul>
       <ul
         id="devops"
-        :class="{'dev-change': devchange}"
+        :class="{'dev-change': isDevOpsActive}"
       >
         <li>Linux</li>
         <li>Git</li>
@@ -82,20 +82,22 @@
         <li>AWS</li>
       </ul>
     </div>
-    <div
-      v-if="frontchange"
-    >
-      <FrontChart />
-    </div>
-    <div
-      v-if="backchange"
-    >
-      <BackChart />
-    </div>
-    <div
-      v-if="devchange"
-    >
-      <DevChart />
+    <div id="skillGraph">
+      <div
+        v-if="isFrontActive"
+      >
+        <FrontChart />
+      </div>
+      <div
+        v-if="isBackActive"
+      >
+        <BackChart />
+      </div>
+      <div
+        v-if="isDevOpsActive"
+      >
+        <DevChart />
+      </div>
     </div>
   </div>
 </template>
@@ -114,26 +116,23 @@ export default {
   },
   data(){
     return {
-      frontchange: true,
-      backchange: false,
-      devchange: false
+      currentChart: 'front'
+    }
+  },
+  computed: {
+    isFrontActive() {
+      return this.currentChart=='front';
+    },
+    isBackActive() {
+      return this.currentChart=='back';
+    },
+    isDevOpsActive() {
+      return this.currentChart=='devops';
     }
   },
   methods: {
-    frontChange(){
-      this.frontchange=true,
-      this.backchange=false,
-      this.devchange=false
-    },
-    backChange(){
-      this.frontchange=false,
-      this.backchange=true,
-      this.devchange=false
-    },
-    devChange(){
-      this.frontchange=false,
-      this.backchange=false,
-      this.devchange=true
+    setCurrentChart(chart) {
+      this.currentChart = chart;
     }
   }
 }
@@ -250,6 +249,12 @@ export default {
       padding: 12px 20px 2px 20px;
       box-shadow: 0 0 8px gray;
     }
+  }
+
+  #skillGraph {
+    width: 70%;
+    height: 70%;
+    margin: auto;
   }
 }
 
