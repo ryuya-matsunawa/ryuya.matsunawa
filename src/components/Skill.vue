@@ -26,7 +26,7 @@
         <li>
           <span
             id="front"
-            @click="F_change"
+            @click="setCurrentChart('front')"
           >
             Front-end
           </span>
@@ -34,7 +34,7 @@
         <li>
           <span
             id="back"
-            @click="B_change"
+            @click="setCurrentChart('back')"
           >
             Back-end
           </span>
@@ -42,7 +42,7 @@
         <li>
           <span
             id="DevOps"
-            @click="D_change"
+            @click="setCurrentChart('devOps')"
           >
             DevOps
           </span>
@@ -52,7 +52,7 @@
     <div id="skillList">
       <ul
         id="front-end"
-        :class="{'front-change': frontChange}"
+        :class="{'front-change': isFrontActive}"
       >
         <li>HTML</li>
         <li>CSS</li>
@@ -63,7 +63,7 @@
       </ul>
       <ul
         id="back-end"
-        :class="{'back-change': backChange}"
+        :class="{'back-change': isBackActive}"
       >
         <li>Java</li>
         <li>Ruby</li>
@@ -73,7 +73,7 @@
       </ul>
       <ul
         id="devops"
-        :class="{'dev-change': devChange}"
+        :class="{'dev-change': isDevOpsActive}"
       >
         <li>Linux</li>
         <li>Git</li>
@@ -83,17 +83,17 @@
       </ul>
     </div>
     <div
-      v-if="frontChange"
+      v-if="isFrontActive"
     >
       <FrontChart />
     </div>
     <div
-      v-if="backChange"
+      v-if="isBackActive"
     >
       <BackChart />
     </div>
     <div
-      v-if="devChange"
+      v-if="isDevOpsActive"
     >
       <DevChart />
     </div>
@@ -114,26 +114,23 @@ export default {
   },
   data(){
     return {
-      frontChange: true,
-      backChange: false,
-      devChange: false
+      currentChart: 'front'
     }
   },
+  computed: {
+    isFrontActive() {
+      return this.currentChart=='front';
+    },
+    isBackActive() {
+      return this.currentChart=='back';
+    },
+    isDevOpsActive() {
+      return this.currentChart=='devOps';
+    },
+  },
   methods: {
-    F_change(){
-      this.frontChange=!this.frontChange,
-      this.backChange=false,
-      this.devChange=false
-    },
-    B_change(){
-      this.backChange=!this.backChange,
-      this.frontChange=false,
-      this.devChange=false
-    },
-    D_change(){
-      this.devChange=!this.devChange,
-      this.backChange=false,
-      this.frontChange=false
+    setCurrentChart(chart) {
+      this.currentChart = chart;
     }
   }
 }
