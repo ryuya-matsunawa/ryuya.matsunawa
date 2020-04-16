@@ -14,7 +14,7 @@
     </div>
     <img
       id="profilePicture"
-      src="../assets/sample.png"
+      src="../assets/profile.png"
     >
   </div>
 </template>
@@ -46,8 +46,8 @@
 
   #profilePicture {
     border-radius: 50%;
-    width: 64px;
-    height: 64px;
+    width: 200px;
+    height: 200px;
   }
 
   hr {

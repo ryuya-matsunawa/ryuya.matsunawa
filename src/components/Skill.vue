@@ -1,7 +1,7 @@
 <template>
   <div id="skillSection">
     <div id="skillTitle">
-      Skill Sets
+      Skill Set
     </div>
     <div id="skillExplain">
       <p>
@@ -21,7 +21,10 @@
         href="https://github.com/ryuya-matsunawa"
       > https://github.com/ryuya-matsunawa</a>
     </label>
-    <div id="skillCategories">
+    <div
+      id="skillCategories"
+      onfocus="this.blur()"
+    >
       <ul>
         <li>
           <span
@@ -146,7 +149,7 @@ export default {
   height: auto;
   background-color: #fff;
   text-align: center;
-  padding: 60px 0;
+  padding: 60px 0 80px 0;
   margin-top: -80px;
 
   #skillTitle {
@@ -184,6 +187,10 @@ export default {
     li {
       display: inline-block;
       margin: 0 10px;
+
+      span {
+        outline: none;
+      }
     }
 
     #front {

@@ -27,8 +27,9 @@
 #visionSection {
   background-color: #f5f5f5;
   text-align: center;
-  padding: 20px 0;
+  padding: 60px 0 30px 0;
   height: auto;
+  margin-top: -60px;
   width: 100%;
 }
 

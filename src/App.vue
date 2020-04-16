@@ -5,6 +5,7 @@
     <About />
     <Skill />
     <Vision />
+    <contact />
     <Footer />
   </div>
 </template>
@@ -15,6 +16,7 @@ import Main from './components/Main.vue'
 import About from './components/About.vue'
 import Skill from './components/Skill.vue'
 import Vision from './components/Vision.vue'
+import contact from './components/contact.vue'
 import Footer from './components/Footer.vue'
 
 export default {
@@ -25,6 +27,7 @@ export default {
     About,
     Skill,
     Vision,
+    contact,
     Footer
   }
 };
@@ -42,20 +45,8 @@ export default {
   box-sizing: border-box;
 }
 
-@media (max-width: 1024px) {
-  #app {
-    width: 100%;
-  }
-
-  #aboutExplain {
-    width: 60%;
-  }
-}
-
-@media (max-width: 768px) {
-  #app {
-    width: 100%;
-  }
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 </style>
