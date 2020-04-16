@@ -9,8 +9,7 @@
         まずは、開発の色々な工程を経験して、オールラウンドに対応できる力をつけたいです。
         広く浅くスキルを身に付けたら、そこから主にバックエンドの知識を深めていくつもりです。
         また、今回のポートフォリオ実装でデザインの興味が沸いているので、
-        自分のやりたいことを増やしつつも何を一番とするのか、優先順位を
-        明確にして勉強していきます。
+        自分のやりたいことを増やしつつも何を一番とするのか、優先順位を明確にして勉強していきます。
       </p>
     </div>
   </div>
@@ -27,7 +26,7 @@
 #visionSection {
   background-color: #f5f5f5;
   text-align: center;
-  padding: 60px 0 30px 0;
+  padding: 60px 0 60px 0;
   height: auto;
   margin-top: -60px;
   width: 100%;
@@ -49,21 +48,18 @@
   line-height: 1.5;
   word-break: break-all;
   margin: auto;
-  width: 75%;
   text-align: left;
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
+@media (max-width: 2560px) {
+  #visionExplain {
+    width: 60%;
+  }
 }
 
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
-a {
-  color: #42b983;
+@media (max-width: 1000px) {
+  #visionExplain {
+    width: 75%;
+  }
 }
 </style>

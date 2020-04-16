@@ -169,7 +169,6 @@ export default {
     word-break: break-all;
     margin: auto;
     text-align: left;
-    width: 75%;
     padding-bottom: 10px;
   }
 
@@ -259,22 +258,21 @@ export default {
   }
 
   #skillGraph {
-    width: 70%;
-    height: 70%;
-    margin: auto;
+    width: 40%;
+    height: 40%;
+    margin: 0 auto;
   }
 }
 
-h3 {
-  margin: 40px 0 0;
+@media (max-width: 2560px) {
+  #skillExplain {
+    width: 60%;
+  }
 }
 
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-a {
-  color: #42b983;
+@media (max-width: 1000px) {
+  #skillExplain {
+    width: 75%;
+  }
 }
 </style>

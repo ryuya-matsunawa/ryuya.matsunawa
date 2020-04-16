@@ -62,7 +62,7 @@ export default {
   padding: 10px;
   box-sizing: border-box;
   position: fixed;
-  z-index: 1000;
+  z-index: 1;
   top: 0;
   transition: all 1s;
 
@@ -74,7 +74,7 @@ export default {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1001;
+    z-index: 2;
     background-color: #fff;
   }
 

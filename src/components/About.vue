@@ -13,10 +13,6 @@
         今回のポートフォリオ作成で内定者課題の追加課題ができそうなので挑戦中です！
         <br>
         <br>
-        基本的に寝るのは早いです。なんもない日は23時には寝ちゃいます。
-        朝はだいたい7時には勝手に起きるので、最近はアラームほとんど使ってません！
-        スマホいつでも近くにあるのでレスポンスは早いです！<br>
-        <br>
         基本的にはインドアです。漫画とかドラマ、アニメ見てます。
         マイブームはカタンっていうボードゲームです。
         飲みとかテニスとか遊びに誘われたらいつでも行きたいです！<br>
@@ -26,7 +22,13 @@
         自分が経験したことない話を聞くのがとても好きなので、
         ぜひ色々な人とお話したいです。上手く喋れるように頑張ります！
         以上です、よろしくお願いします！
+        <br>
+        <br>
+        内定者サイトで紹介していただきました！作ってくださった方々ありがとうございます！
       </p>
+      <a
+        href="https://www.seattleconsulting.co.jp/team20/person/person23.html"
+      >https://www.seattleconsulting.co.jp/team20/person/person23.html</a>
     </div>
   </div>
 </template>
@@ -67,13 +69,17 @@
   text-align: left;
 }
 
+a {
+  position: relative;
+}
+
 @media (max-width: 2560px) {
   #aboutExplain {
     width: 60%;
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1000px) {
   #aboutExplain {
     width: 75%;
   }
