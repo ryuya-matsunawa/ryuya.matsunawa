@@ -8,7 +8,7 @@
         スキルをまとめました。フロントエンドのスキルはポートフォリオ実装でかなり力がつきました。
         特に、Vue.jsは内定者課題で使おうとしていて、理解できなかったものでしたが、
         今回の実装である程度理解できました。Backendに関してはまだまだ経験不足で
-        今後学ぶものとしてリストアップしています。Pythonを今後特に知識を深めていきたいです。<br>
+        今後学ぶものとしてリストアップしています。AIに興味があるので、特にPythonの知識を深めていきたいです。<br>
         下のグラフの評価基準として、Front-endはポートフォリオ実装でどれだけ使えたか(1~5段階)、
         Back-endは今までどれだけ使ったことがあるか(1~5段階)、DevOpsはBack-endと同じですが、
         ほとんど差がないので(1~3段階)とさせていただきます。
@@ -26,7 +26,7 @@
         <li>
           <span
             id="front"
-            @click="F_change"
+            @click="setCurrentChart('front')"
           >
             Front-end
           </span>
@@ -34,7 +34,7 @@
         <li>
           <span
             id="back"
-            @click="B_change"
+            @click="setCurrentChart('back')"
           >
             Back-end
           </span>
@@ -42,7 +42,7 @@
         <li>
           <span
             id="DevOps"
-            @click="D_change"
+            @click="setCurrentChart('devops')"
           >
             DevOps
           </span>
@@ -52,7 +52,7 @@
     <div id="skillList">
       <ul
         id="front-end"
-        :class="{'front-change': frontChange}"
+        :class="{'front-change': isFrontActive}"
       >
         <li>HTML</li>
         <li>CSS</li>
@@ -63,7 +63,7 @@
       </ul>
       <ul
         id="back-end"
-        :class="{'back-change': backChange}"
+        :class="{'back-change': isBackActive}"
       >
         <li>Java</li>
         <li>Ruby</li>
@@ -73,7 +73,7 @@
       </ul>
       <ul
         id="devops"
-        :class="{'dev-change': devChange}"
+        :class="{'dev-change': isDevOpsActive}"
       >
         <li>Linux</li>
         <li>Git</li>
@@ -82,20 +82,22 @@
         <li>AWS</li>
       </ul>
     </div>
-    <div
-      v-if="frontChange"
-    >
-      <FrontChart />
-    </div>
-    <div
-      v-if="backChange"
-    >
-      <BackChart />
-    </div>
-    <div
-      v-if="devChange"
-    >
-      <DevChart />
+    <div id="skillGraph">
+      <div
+        v-if="isFrontActive"
+      >
+        <FrontChart />
+      </div>
+      <div
+        v-if="isBackActive"
+      >
+        <BackChart />
+      </div>
+      <div
+        v-if="isDevOpsActive"
+      >
+        <DevChart />
+      </div>
     </div>
   </div>
 </template>
@@ -114,26 +116,23 @@ export default {
   },
   data(){
     return {
-      frontChange: true,
-      backChange: false,
-      devChange: false
+      currentChart: 'front'
+    }
+  },
+  computed: {
+    isFrontActive() {
+      return this.currentChart=='front';
+    },
+    isBackActive() {
+      return this.currentChart=='back';
+    },
+    isDevOpsActive() {
+      return this.currentChart=='devops';
     }
   },
   methods: {
-    F_change(){
-      this.frontChange=!this.frontChange,
-      this.backChange=false,
-      this.devChange=false
-    },
-    B_change(){
-      this.backChange=!this.backChange,
-      this.frontChange=false,
-      this.devChange=false
-    },
-    D_change(){
-      this.devChange=!this.devChange,
-      this.backChange=false,
-      this.frontChange=false
+    setCurrentChart(chart) {
+      this.currentChart = chart;
     }
   }
 }
@@ -250,6 +249,12 @@ export default {
       padding: 12px 20px 2px 20px;
       box-shadow: 0 0 8px gray;
     }
+  }
+
+  #skillGraph {
+    width: 70%;
+    height: 70%;
+    margin: auto;
   }
 }
 
