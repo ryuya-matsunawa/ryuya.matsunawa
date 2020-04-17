@@ -5,10 +5,30 @@
     </div>
     <div id="aboutExplain">
       <p>
-        千葉出身の新入社員です。大学、大学院共に数学を学んでいました。学生のうちは、
-        プログラミングの勉強をしたり、友達の勧めでライティングゼミにも通っていました。
-        aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+        松縄竜弥です！りゅうやって呼んでください！
+        生まれも育ちも千葉県の流山市です。
+        中学からずっとテニスを続けているのでシアトルでも部活動に入りたいです！(ラケットはYONEX一筋です！)<br>
+        趣味はテニス、ボードゲーム、筋トレ、漫画(ジャンプ系、スポーツ系、名探偵コナンetc.....)
+        あとは自分でゲームを作ってみたいのでunityを勉強中です！
+        今回のポートフォリオ作成で内定者課題の追加課題ができそうなので挑戦中です！
+        <br>
+        <br>
+        基本的にはインドアです。漫画とかドラマ、アニメ見てます。
+        マイブームはカタンっていうボードゲームです。
+        飲みとかテニスとか遊びに誘われたらいつでも行きたいです！<br>
+        <br>
+        かなり口下手です。頭の中で色々考えてしまって整理するのに
+        時間かかってしまうのが今後の課題です。
+        自分が経験したことない話を聞くのがとても好きなので、
+        ぜひ色々な人とお話したいです。上手く喋れるように頑張ります！
+        以上です、よろしくお願いします！
+        <br>
+        <br>
+        内定者サイトで紹介していただきました！作ってくださった方々ありがとうございます！
       </p>
+      <a
+        href="https://www.seattleconsulting.co.jp/team20/person/person23.html"
+      >https://www.seattleconsulting.co.jp/team20/person/person23.html</a>
     </div>
   </div>
 </template>
@@ -24,9 +44,10 @@
 #aboutSection {
   background-color: #f5f5f5;
   text-align: center;
-  padding: 20px 0;
-  height: 500px;
+  height: auto;
   width: 100%;
+  padding: 60px 0 120px 0;
+  margin: -60px 0;
 }
 
 #aboutTitle {
@@ -35,6 +56,7 @@
   font-size: 18pt;
   font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
   padding-bottom: 10px;
+  text-shadow: 0 0 2px gray;
 }
 
 #aboutExplain {
@@ -44,20 +66,22 @@
   line-height: 1.5;
   word-break: break-all;
   margin: auto;
-  width: 75%;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
+  text-align: left;
 }
 
 a {
-  color: #42b983;
+  position: relative;
+}
+
+@media (max-width: 2560px) {
+  #aboutExplain {
+    width: 60%;
+  }
+}
+
+@media (max-width: 1000px) {
+  #aboutExplain {
+    width: 75%;
+  }
 }
 </style>

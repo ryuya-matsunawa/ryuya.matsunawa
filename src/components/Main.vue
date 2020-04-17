@@ -3,12 +3,18 @@
     <div id="userName">
       R.Matsunawa
     </div>
+    <hr
+      width="20%"
+      align="center"
+      size="1"
+      color="#f3f3f3"
+    >
     <div id="companyName">
       Seattleconsulting
     </div>
     <img
       id="profilePicture"
-      src="../assets/sample.png"
+      src="../assets/profile.png"
     >
   </div>
 </template>
@@ -23,8 +29,10 @@
 
 #mainSection {
   background: linear-gradient(180deg, #80e1f7, #06c1e6);
-  padding-bottom: 30px;
+  padding: 120px 0;
   text-align: center;
+  margin: -40px 0;
+  height: auto;
 
   #userName,
   #companyName {
@@ -32,18 +40,18 @@
     font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
     font-weight: bold;
     font-size: 18pt;
-    text-shadow: 0 0.5px 2px black;
+    text-shadow: 0 0 6px gray;
     padding: 20px 0;
-  }
-
-  #userName {
-    border-bottom: 1px solid#fff;
   }
 
   #profilePicture {
     border-radius: 50%;
-    width: 64px;
-    height: 64px;
+    width: 200px;
+    height: 200px;
+  }
+
+  hr {
+    display: inline-block;
   }
 }
 

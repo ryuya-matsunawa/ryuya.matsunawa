@@ -1,0 +1,46 @@
+
+<script>
+import { Radar } from 'vue-chartjs';
+
+export default {
+  name: 'DevChart',
+  extends: Radar,
+  data () {
+    return {
+      data: {
+        labels: ['Linux', 'Git', 'GitHub', 'Firebase','AWS'],
+        datasets: [
+          {
+            label: 'DevOps',
+            data: [20, 20, 30, 20, 30],
+            backgroundColor: [
+              'rgba(87, 16, 131, 0.25)'
+            ],
+            borderColor: [
+              'rgba(87, 16, 131, 1)',
+              'rgba(54, 162, 235, 1)',
+              'rgba(255, 206, 86, 1)',
+              'rgba(75, 192, 192, 1)',
+              'rgba(153, 102, 255, 1)'
+            ],
+            borderWidth: 1
+          }
+        ]
+      },
+      options:{
+	scale:{
+		ticks:{
+			beginAtZero:true,
+			max:30,
+			min:0,
+      stepSize: 10
+		}
+	}
+}
+    }
+  },
+  mounted () {
+    this.renderChart(this.data, this.options)
+  }
+}
+</script>

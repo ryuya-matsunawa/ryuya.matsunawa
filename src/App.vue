@@ -1,23 +1,17 @@
 <template>
   <div>
-    <div id="app">
-      <Header />
-      <Main />
-      <About />
-      <Skill />
-      <Vision />
-      <Footer />
-    </div>
-    <transition name="fade">
-      <a
-        v-show="isShow"
-        v-scroll-to="'#top'"
-        href="#app"
-        class="scroll-top"
-      >
-        <i class="fa fa-angle-up fa-lg scroll-top__ico" />
-      </a>
-    </transition>
+    <div class="shutter" />
+    <section>
+      <div id="app">
+        <Header />
+        <Main />
+        <About />
+        <Skill />
+        <Vision />
+        <contact />
+        <Footer />
+      </div>
+    </section>
   </div>
 </template>
 
@@ -27,16 +21,8 @@ import Main from './components/Main.vue'
 import About from './components/About.vue'
 import Skill from './components/Skill.vue'
 import Vision from './components/Vision.vue'
+import contact from './components/contact.vue'
 import Footer from './components/Footer.vue'
-import Vue from "vue";
-import VueScrollTo from "vue-scrollto";
-
-
-Vue.use(VueScrollTo, {
-  container: "body",
-  duration: 500,
-  easing: "ease"
-});
 
 export default {
   name: 'App',
@@ -46,56 +32,44 @@ export default {
     About,
     Skill,
     Vision,
+    contact,
     Footer
-  },
-  data() {
-    return {
-      scrollY: 0
-    };
-  },
-  computed: {
-    isShow() {
-      return this.scrollY > 200 ? true : false;
-    }
-  },
-  mounted() {
-    // スクロールを取得
-    window.addEventListener("scroll", this.onScroll);
-    window.addEventListener("load", () => {
-      this.onScroll();
-    });
-  },
-  methods: {
-    // スクロール値の取得
-    onScroll() {
-      this.scrollY = window.pageYOffset;
-    }
   }
 };
 </script>
 
 <style lang="scss">
-.scroll-top {
+
+
+.shutter {
   position: fixed;
-  background-color: #000;
-  padding: 10px 16px;
-  border-radius: 32px;
-
-  &__ico {
-    font-weight: bold;
-    font-size: 20px;
-    color: #fff;
-  }
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #1e1e1e;
+  z-index: 9999;
+  -webkit-animation: byeshutter 2.6s forwards;
+  animation: byeShutter 2.6s forwards;
 }
 
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s;
+.shutter::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  background-color: #fff;
+  width: 0;
+  height: 1px;
+  -webkit-animation: shutteropen 2.6s forwards;
+  animation: shutterOpen 2.6s forwards;
 }
 
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
+.content {
+  -webkit-animation: contentscale 2.6s forwards;
+  animation: contentScale 2.6s forwards;
 }
 
 #app {
@@ -104,8 +78,59 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
   width: 100%;
-  max-width: 768px;
   height: 1024px;
+  box-sizing: border-box;
+}
+
+@keyframes byeShutter {
+  70% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    display: none;
+    z-index: -1;
+  }
+}
+
+@keyframes shutterOpen {
+  0% {
+    width: 0;
+    height: 1px;
+  }
+
+  50% {
+    width: 100%;
+    height: 1px;
+  }
+
+  90% {
+    width: 100%;
+    height: 100%;
+  }
+
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes contentScale {
+  70% {
+    -webkit-transform: perspective(800px) scale(0.9) rotateX(15deg);
+    transform: perspective(800px) scale(0.9) rotateX(15deg);
+  }
+
+  100% {
+    -webkit-transform: perspective(800px) scale(1) rotateX(0);
+    transform: perspective(800px) scale(1) rotateX(0);
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  outline: none;
 }
 
 </style>
