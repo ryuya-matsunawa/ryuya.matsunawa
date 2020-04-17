@@ -1,5 +1,8 @@
 <template>
-  <div id="headerSection">
+  <div
+    id="headerSection"
+    :class="{ 'change': scrollY > 60 }"
+  >
     <button
       type="button"
       class="btn_menu"
@@ -28,8 +31,12 @@ export default {
   },
   data(){
     return {
-      isActive: false
+      isActive: false,
+      scrollY: 0
     }
+  },
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll)
   },
   methods: {
     menu(){
@@ -37,6 +44,9 @@ export default {
     },
     menuClose(){
       this.isActive=false
+    },
+    handleScroll() {
+      this.scrollY = window.scrollY
     }
   }
 }
@@ -52,8 +62,9 @@ export default {
   padding: 10px;
   box-sizing: border-box;
   position: fixed;
-  z-index: 1000;
+  z-index: 1;
   top: 0;
+  transition: all 1s;
 
   nav {
     width: 100%;
@@ -63,7 +74,7 @@ export default {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1001;
+    z-index: 2;
     background-color: #fff;
   }
 
@@ -81,8 +92,6 @@ export default {
     padding: 0;
     width: 30px;
     color: #333;
-    font-size: 8px;
-    letter-spacing: 0.1em;
     cursor: pointer;
     text-align: left;
     outline: none;
@@ -121,6 +130,10 @@ export default {
     right: 0;
     z-index: 1001;
   }
+}
+
+.change {
+  opacity: 0.8;
 }
 
 </style>

@@ -26,7 +26,7 @@
           id="drawerMenuItemLink"
           href="#skillSection"
           @click="clickSmoothScroll()"
-        >Skill Sets</a>
+        >Skill Set</a>
       </li>
       <li id="drawerMenuItem">
         <a
@@ -34,6 +34,13 @@
           href="#visionSection"
           @click="clickSmoothScroll()"
         >Vision</a>
+      </li>
+      <li id="drawerMenuItem">
+        <a
+          id="drawerMenuItemLink"
+          href="#contactSection"
+          @click="clickSmoothScroll()"
+        >contact</a>
       </li>
     </ul>
   </div>
