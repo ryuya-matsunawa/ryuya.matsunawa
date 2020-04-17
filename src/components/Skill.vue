@@ -155,9 +155,9 @@ export default {
   #skillTitle {
     color: #20879f;
     font-weight: bold;
-    font-size: 18pt;
+    font-size: 23pt;
     font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-    padding-bottom: 10px;
+    padding-bottom: 40px;
     text-shadow: 0 0 6px gray;
   }
 
@@ -181,7 +181,7 @@ export default {
   }
 
   #skillCategories {
-    padding: 20px 0;
+    padding: 40px 0 20px 0;
 
     li {
       display: inline-block;
@@ -189,6 +189,14 @@ export default {
 
       span {
         outline: none;
+        padding: 10px;
+        box-shadow: 2px 2px  rgba($color:gray, $alpha: 1);
+        transition: all 0.2s;
+        border: 1px solid gray;
+      }
+
+      :hover {
+        box-shadow: 2px 2px  rgba($color:gray, $alpha: 0);
       }
     }
 

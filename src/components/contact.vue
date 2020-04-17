@@ -57,7 +57,7 @@ export default {
 #contactSection {
   height: auto;
   width: 100%;
-  margin: 0 auto;
+  margin: 10px auto;
   padding: 30px 0;
   text-align: center;
 

@@ -39,7 +39,7 @@
     color: #fff;
     font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
     font-weight: bold;
-    font-size: 18pt;
+    font-size: 23pt;
     text-shadow: 0 0 6px gray;
     padding: 20px 0;
   }
