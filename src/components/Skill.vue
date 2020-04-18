@@ -23,28 +23,26 @@
     </label>
     <div
       id="skillCategories"
-      onfocus="this.blur()"
     >
       <ul>
         <li>
           <span
             id="front"
+            :class="{'front-change': isFrontActive}"
             @click="setCurrentChart('front')"
           >
             Front-end
           </span>
-        </li>
-        <li>
           <span
             id="back"
+            :class="{'back-change': isBackActive}"
             @click="setCurrentChart('back')"
           >
             Back-end
           </span>
-        </li>
-        <li>
           <span
             id="DevOps"
+            :class="{'dev-change': isDevOpsActive}"
             @click="setCurrentChart('devops')"
           >
             DevOps
@@ -185,7 +183,6 @@ export default {
 
     li {
       display: inline-block;
-      margin: 0 10px;
 
       span {
         outline: none;
@@ -193,10 +190,23 @@ export default {
         box-shadow: 2px 2px  rgba($color:gray, $alpha: 1);
         transition: all 0.2s;
         border: 1px solid gray;
+        margin: 0 10px;
       }
 
       :hover {
         box-shadow: 2px 2px  rgba($color:gray, $alpha: 0);
+      }
+
+      :first-child:hover {
+        background-color: rgba(181, 26, 26, 0.25);
+      }
+
+      :nth-of-type(2):hover {
+        background-color: rgba(15, 136, 57, 0.25);
+      }
+
+      :last-child:hover {
+        background-color: rgba(87, 16, 131, 0.25);
       }
     }
 
@@ -216,6 +226,18 @@ export default {
       color: #571083;
       font-size: 18px;
       cursor: pointer;
+    }
+
+    .front-change {
+      background-color: rgba(181, 26, 26, 0.25);
+    }
+
+    .back-change {
+      background-color: rgba(15, 136, 57, 0.25);
+    }
+
+    .dev-change {
+      background-color: rgba(87, 16, 131, 0.25);
     }
   }
 
@@ -268,7 +290,7 @@ export default {
   #skillGraph {
     width: 40%;
     height: 40%;
-    margin: 0 auto;
+    margin: 20px auto;
   }
 }
 

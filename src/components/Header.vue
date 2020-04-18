@@ -108,12 +108,16 @@ export default {
   }
 
   /* メニューアクティブ時 */
+  button.active {
+    width: 50px;
+  }
+
   button.active span.bar {
-    width: 49px;
+    width: 48px;
   }
 
   button.active .bar1 {
-    transform: rotate(40deg);
+    transform: rotate(42deg);
     position: fixed;
     right: 0;
     top: 0;
@@ -125,7 +129,7 @@ export default {
   }
 
   button.active .bar3 {
-    transform: rotate(-40deg);
+    transform: rotate(-42deg);
     position: fixed;
     right: 0;
     z-index: 1001;

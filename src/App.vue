@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="shutter" />
+    <!--<div class="shutter" />-->
     <section>
       <div id="app">
         <Header />

@@ -117,8 +117,4 @@ export default {
     }
   }
 }
-
-li {
-  display: block;
-}
 </style>

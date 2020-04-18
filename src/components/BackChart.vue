@@ -39,7 +39,10 @@ export default {
       min:0,
       stepSize: 10
 		}
-	}
+	},
+  legend: {
+    display:false
+  }
 }
     }
   },
