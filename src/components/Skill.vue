@@ -230,14 +230,17 @@ export default {
 
     .front-change {
       background-color: rgba(181, 26, 26, 0.25);
+      box-shadow: none;
     }
 
     .back-change {
       background-color: rgba(15, 136, 57, 0.25);
+      box-shadow: none;
     }
 
     .dev-change {
       background-color: rgba(87, 16, 131, 0.25);
+      box-shadow: none;
     }
   }
 

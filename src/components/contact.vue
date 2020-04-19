@@ -19,7 +19,10 @@
       >
         送信
       </button>
-      <p v-if="submitText">
+      <p
+        v-if="submitText"
+        :class="{'sample':submitAfterText}"
+      >
         送信されました！
       </p>
     </div>
@@ -31,7 +34,8 @@ export default {
   data(){
     return{
       inputMail: '',
-      inputText: ''
+      inputText: '',
+      submitAfterText: true
     }
   },
   computed:{
@@ -62,6 +66,7 @@ export default {
       this.inputMail=''
       this.inputText=''
       this.submitText=true
+      this.submitAfterText=false
     }
   }
 }
@@ -116,6 +121,10 @@ export default {
   .change:hover {
     background-color: rgba(83, 191, 73, 1);
     cursor: pointer;
+  }
+
+  .sample {
+    display: none;
   }
 }
 
