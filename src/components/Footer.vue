@@ -35,7 +35,7 @@ export default {
 #footerSection {
   background: linear-gradient(180deg, #80e1f7, #06c1e6);
   width: 100%;
-  height: 50px;
+  height: 80px;
   text-align: center;
 
   #footerScroll {
@@ -49,7 +49,7 @@ export default {
 
   #footerCopyright {
     font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-    font-size: 12px;
+    font-size: 20px;
     position: relative;
     top: -5px;
   }

@@ -35,9 +35,9 @@
 #visionTitle {
   color: #20879f;
   font-weight: bold;
-  font-size: 18pt;
+  font-size: 23pt;
   font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-  padding-bottom: 10px;
+  padding-bottom: 40px;
   text-shadow: 0 0 6px gray;
 }
 
