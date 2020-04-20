@@ -1,18 +1,16 @@
 <template>
   <div>
     <!--<div class="shutter" />-->
-    <section>
-      <div id="app">
-        <Header />
-        <Main />
-        <div>{{ this.skills }}</div>
-        <About />
-        <Skill />
-        <Vision />
-        <contact />
-        <Footer />
-      </div>
-    </section>
+    <div id="app">
+      <Header />
+      <Main />
+      <div>{{ this.skills }}</div>
+      <About />
+      <Skill />
+      <Vision />
+      <contact />
+      <Footer />
+    </div>
   </div>
 </template>
 
@@ -40,6 +38,14 @@ export default {
     return {
       skills: []
     }
+  },
+   //vuexのstoreは基本的にcomputedと使う
+  computed: {
+    //main.jsでローカルにstoreを登録してるので、$storeが使える
+    //ここではgettersに登録したmessageゲッターを使ってstoreのstateのmessageを取得している
+    message(){
+     return this.$store.getters.message
+   }
   },
   mounted () {
     this.getSkills();
