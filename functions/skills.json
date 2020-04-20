@@ -1,22 +1,83 @@
 {
   "skills" : [ {
+    "id" : 1,
     "category" : "front-end",
     "name" : "HTML",
-    "score" : 3
-  }, {
-    "category" : "back-end",
-    "name" : "Java",
-    "score" : 3
-  }, {
-    "category" : "devops",
-    "name" : "github",
-    "score" : 2
-  }, {
-    "address" : "東京都江戸川区篠崎町",
-    "zip" : 1330061
-  }, {
+    "score" : 30
+  },{
+    "id" : 2,
     "category" : "front-end",
     "name" : "CSS",
-    "score" : 3
-  } ]
+    "score" : 30
+  },{
+    "id" : 3,
+    "category" : "front-end",
+    "name" : "Javascript",
+    "score" : 30
+  },{
+    "id" : 4,
+    "category" : "front-end",
+    "name" : "jQuery",
+    "score" : 30
+  },{
+    "id" : 5,
+    "category" : "front-end",
+    "name" : "SCSS",
+    "score" : 30
+  },{
+    "id" : 6,
+    "category" : "front-end",
+    "name" : "Vue",
+    "score" : 30
+  },{
+    "id" : 7,
+    "category" : "back-end",
+    "name" : "Java",
+    "score" : 30
+  },{
+    "id" : 8,
+    "category" : "back-end",
+    "name" : "Ruby",
+    "score" : 30
+  },{
+    "id" : 9,
+    "category" : "back-end",
+    "name" : "RubyOnRails",
+    "score" : 30
+  },{
+    "id" : 10,
+    "category" : "back-end",
+    "name" : "MySQL",
+    "score" : 30
+  },{
+    "id" : 11,
+    "category" : "back-end",
+    "name" : "Python",
+    "score" : 30
+  },{
+    "id" : 12,
+    "category" : "devops",
+    "name" : "Linux",
+    "score" : 20
+  },{
+    "id" : 13,
+    "category" : "devops",
+    "name" : "Git",
+    "score" : 20
+  },{
+    "id" : 14,
+    "category" : "devops",
+    "name" : "GitHub",
+    "score" : 20
+  },{
+    "id" : 15,
+    "category" : "devops",
+    "name" : "Firebase",
+    "score" : 20
+  },{
+    "id" : 16,
+    "category" : "devops",
+    "name" : "AWS",
+    "score" : 20
+  }]
 }
