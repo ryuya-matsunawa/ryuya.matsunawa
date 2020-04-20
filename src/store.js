@@ -1,38 +1,24 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import axios from 'axios'
 
 Vue.use(Vuex)
 
-const store = new Vuex.Store({
-
-  //state:コンポーネントでいうdata
+export default new Vuex.Store({
   state: {
-    message: '初期メッセージ'
+    users:[],
   },
-
-  //getters:コンポーネントでいうcomputed的なもの
-  getters:{
-    //messageを使用するgetter
-    message(state) {
-      return state.message
-    }
-  },
-
-  //mutations:コンポーネントでいうmethod（と言うかsetter）
-  //stateを唯一変更できるもの
   mutations: {
-    //vuexでは引数をpayloadと呼ぶっぽい
-    //payloadはオブジェクトにするべき（いっぱい入れれるし）
-    setMessage(state,payload){
-      state.message = payload.message
+    setUsers : function(state,users) {
+      state.users = users
     }
   },
-
-  //actionのコミットを使うことでミューテーションを呼び出す（コンポーネントには無い概念）
   actions: {
-    doUpdate({commit}, message){
-      commit('setMessage',{message})
+    getUsers: function({commit}){
+      return axios.get('https://jsonplaceholder.typicode.com/users')
+          .then(response => {
+            commit('setUsers',response.data)
+          })
     }
-  }
+  },
 })
-export default store

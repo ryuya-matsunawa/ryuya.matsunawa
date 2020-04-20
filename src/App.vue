@@ -9,6 +9,15 @@
       <Skill />
       <Vision />
       <contact />
+      <div>
+        <h1>ユーザ一覧</h1>
+        <div
+          v-for="skill in users"
+          :key="skill.id"
+        >
+          {{ skill.username }}
+        </div>
+      </div>
       <Footer />
     </div>
   </div>
@@ -39,16 +48,14 @@ export default {
       skills: []
     }
   },
-   //vuexのstoreは基本的にcomputedと使う
-  computed: {
-    //main.jsでローカルにstoreを登録してるので、$storeが使える
-    //ここではgettersに登録したmessageゲッターを使ってstoreのstateのmessageを取得している
-    message(){
-     return this.$store.getters.message
-   }
+  computed : {
+    users : function(){
+      return this.$store.state.users
+      }
   },
   mounted () {
     this.getSkills();
+    this.$store.dispatch('getUsers');
   },
   methods: {
     getSkills() {
@@ -67,7 +74,10 @@ export default {
         .catch((e) => {
           alert(e);
         });
-    }
+    },
+    increment : function(){
+      this.$store.commit('increment')
+      }
   }
 }
 </script>
