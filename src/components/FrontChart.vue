@@ -11,7 +11,6 @@ export default {
         labels: ['HTML', 'CSS', 'Javascript','jQuery', 'SCSS', 'Vue'],
         datasets: [
           {
-            label: 'Front-end',
             data: [50, 50, 20, 30, 30, 40],
             backgroundColor: [
               'rgba(181, 26, 26, 0.25)',
@@ -32,14 +31,17 @@ export default {
         ]
       },
       options:{
-	scale:{
-		ticks:{
-			beginAtZero:true,
-			max:50,
-      min:0,
-      stepSize: 10
+        scale:{
+          ticks:{
+            beginAtZero:true,
+            max:50,
+            min:0,
+            stepSize: 10
 		}
-	}
+  },
+  legend: {
+    display:false
+  }
 }
     }
   },

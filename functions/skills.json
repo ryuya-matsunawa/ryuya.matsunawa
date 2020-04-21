@@ -1,0 +1,23 @@
+{
+  "skills": [
+    {
+      "category": "front-end",
+      "name": "HTML",
+      "score": 3
+    },
+    {
+      "category": "back-end",
+      "name": "Java",
+      "score": 3
+    },
+    {
+      "category": "devops",
+      "name": "github",
+      "score": 2
+    },
+    {
+      "zip": 1330061,
+      "address": "東京都江戸川区篠崎町"
+    }
+  ]
+}

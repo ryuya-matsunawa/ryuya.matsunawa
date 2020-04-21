@@ -5,7 +5,10 @@
     </div>
     <div id="contactForm">
       <p>メールアドレス</p>
-      <input v-model="inputMail">
+      <input
+        v-model="inputMail"
+        type="email"
+      >
       <p>お問い合わせ内容</p>
       <textarea v-model="inputText" />
       <button
@@ -16,6 +19,12 @@
       >
         送信
       </button>
+      <p
+        v-if="submitText"
+        :class="{'sample':submitAfterText}"
+      >
+        送信されました！
+      </p>
     </div>
   </div>
 </template>
@@ -25,7 +34,8 @@ export default {
   data(){
     return{
       inputMail: '',
-      inputText: ''
+      inputText: '',
+      submitAfterText: true
     }
   },
   computed:{
@@ -42,12 +52,21 @@ export default {
       }else{
         return false
       }
+    },
+    submitText(){
+      if(this.inputMail=='' && this.inputText==''){
+        return true
+      }else{
+        return false
+    }
     }
   },
   methods:{
     resetMail(){
       this.inputMail=''
       this.inputText=''
+      this.submitText=true
+      this.submitAfterText=false
     }
   }
 }
@@ -102,6 +121,10 @@ export default {
   .change:hover {
     background-color: rgba(83, 191, 73, 1);
     cursor: pointer;
+  }
+
+  .sample {
+    display: none;
   }
 }
 
