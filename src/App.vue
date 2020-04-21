@@ -8,15 +8,6 @@
       <Skill />
       <Vision />
       <contact />
-      <div>
-        <h1>ユーザ一覧</h1>
-        <div
-          v-for="skill in skills"
-          :key="skill.id"
-        >
-          {{ skill.name }}
-        </div>
-      </div>
       <Footer />
     </div>
   </div>
@@ -42,18 +33,8 @@ export default {
     contact,
     Footer
   },
-  computed : {
-    skills : function(){
-      return this.$store.state.skills
-      }
-  },
   mounted () {
     this.$store.dispatch('getSkills');
-  },
-  methods: {
-    increment : function(){
-      this.$store.commit('increment')
-      }
   }
 }
 </script>
