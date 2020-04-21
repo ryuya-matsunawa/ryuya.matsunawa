@@ -21,4 +21,11 @@ export default new Vuex.Store({
           })
     }
   },
+  getters:{
+    getSkillName:(state,getters) => {
+      return state.skills[0].skill.forEach((skillName) => {
+        getters.skills.push(skillName.name)
+      })
+    }
+  }
 })

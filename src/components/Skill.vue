@@ -87,7 +87,7 @@
       <div
         v-if="isFrontActive"
       >
-        <FrontChart :data="data" />
+        <FrontChart />
       </div>
       <div
         v-if="isBackActive"
@@ -117,30 +117,7 @@ export default {
   },
   data(){
     return {
-      currentChart: 'front',
-      data: {
-        labels: [''],
-        datasets: [
-          {
-            data: [50, 50, 20, 30, 30, 40],
-            backgroundColor: [
-              'rgba(181, 26, 26, 0.25)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)'
-            ],
-            borderColor: [
-              'rgba(255, 99, 132, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)'
-            ],
-            borderWidth: 1
-          }
-        ]
-      }
+      currentChart: 'front'
     }
   },
   computed: {
@@ -154,17 +131,9 @@ export default {
       return this.currentChart=='devops';
     }
   },
-  mounted () {
-    this.getSkills()
-  },
   methods: {
     setCurrentChart(chart) {
       this.currentChart = chart;
-    },
-    getSkills(){
-      const skills = this.$store.state.skills
-      this.data.labels = skills
-      console.log('abc')
     }
   }
 }
