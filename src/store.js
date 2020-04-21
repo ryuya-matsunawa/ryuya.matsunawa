@@ -9,10 +9,8 @@ export default new Vuex.Store({
     skills:[]
   },
   mutations: {
-    setSkills : function(state,skillsArray) {
-      skillsArray[0].skill.forEach((skillInfo) => {
-        state.skills.push(skillInfo.name)
-      })
+    setSkills : function(state,skills) {
+    state.skills = skills
     }
   },
   actions: {
