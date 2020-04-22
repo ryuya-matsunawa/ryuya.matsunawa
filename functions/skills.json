@@ -2,78 +2,64 @@
   "skills" : [
     {
       "category" : "Front-end",
+      "background-color":"rgba(181, 26, 26, 0.25)",
       "skill" :[ {
-        "id" : 1,
         "name" : "HTML",
-        "score" : 30
+        "score" : 50,
+        "background-color":"rgba(54, 162, 235, 1)"
       },{
-        "id" : 2,
         "name" : "CSS",
-        "score" : 30
+        "score" : 50
       },{
-        "id" : 3,
         "name" : "Javascript",
-        "score" : 30
+        "score" : 20
       },{
-        "id" : 4,
         "name" : "jQuery",
         "score" : 30
       },{
-        "id" : 5,
         "name" : "SCSS",
         "score" : 30
       },{
-        "id" : 6,
         "name" : "Vue",
-        "score" : 30
+        "score" : 40
       }]
     },
     {
     "category" :"Back-end",
       "skill" :[{
-        "id" : 7,
         "name" : "Java",
         "score" : 30
       },{
-        "id" : 8,
         "name" : "Ruby",
-        "score" : 30
+        "score" : 20
       },{
-        "id" : 9,
         "name" : "RubyOnRails",
-        "score" : 30
+        "score" : 50
       },{
-        "id" : 10,
         "name" : "MySQL",
-        "score" : 30
+        "score" : 20
       },{
-        "id" : 11,
         "name" : "Python",
-        "score" : 30
+        "score" : 40
       }]
     },
     {
       "category" :"Devops",
       "skill" :[{
-        "id" : 12,
         "name" : "Linux",
         "score" : 20
       },{
-        "id" : 13,
         "name" : "Git",
         "score" : 20
       },{
-        "id" : 14,
         "name" : "GitHub",
-        "score" : 20
+        "score" : 30
       },{
-        "id" : 15,
         "name" : "Firebase",
         "score" : 20
       },{
-        "id" : 16,
         "name" : "AWS",
-        "score" : 20
+        "score" : 30
       }]
   }
   ]}

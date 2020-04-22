@@ -8,11 +8,10 @@ export default {
   data () {
     return {
       data: {
-        labels: ['Linux', 'Git', 'GitHub', 'Firebase','AWS'],
+        labels: [],
         datasets: [
           {
-            label: 'DevOps',
-            data: [20, 20, 30, 20, 30],
+            data: [],
             backgroundColor: [
               'rgba(87, 16, 131, 0.25)'
             ],
@@ -43,7 +42,16 @@ export default {
     }
   },
   mounted () {
+    this.getChartName()
     this.renderChart(this.data, this.options)
+  },
+  methods:{
+    getChartName(){
+      const names = this.$store.getters.skillName(2)
+      this.data.labels = names
+      const scores = this.$store.getters.skillScore(2)
+      this.data.datasets[0].data = scores
+    }
   }
 }
 </script>

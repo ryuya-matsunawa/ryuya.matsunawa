@@ -6,11 +6,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    skills:[]
+    skills:[],
+    loaded:false
   },
   mutations: {
     setSkills : function(state,skills) {
     state.skills = skills
+    state.loaded = true
     }
   },
   actions: {
@@ -21,10 +23,25 @@ export default new Vuex.Store({
           })
     }
   },
-  getters:{
-    getSkillName: state => {
-      return state.skills[0].skill.filter(skill => skill.name)
+  getters: {
+    skillName: (state) => (index) => {
+      const skillNameArray = []
+      if(state.skills[index]){
+        state.skills[index].skill.forEach((Skill) => {
+          skillNameArray.push(Skill.name)
+        })
+      }
+      return skillNameArray
+    },
+    skillScore: (state) => (index) => {
+      const skillScoreArray = []
+      if(state.skills[index]){
+        state.skills[index].skill.forEach((Score) => {
+          skillScoreArray.push(Score.score)
+        })
+      }
+      return skillScoreArray
     }
-    }
+  }
   }
 )

@@ -8,6 +8,7 @@
       <Skill />
       <Vision />
       <contact />
+      <!-- <div>{{ test }}</div> -->
       <Footer />
     </div>
   </div>
@@ -33,8 +34,14 @@ export default {
     contact,
     Footer
   },
+  // computed:{
+  //   test(){
+  //       return this.$store.getters.skillName(1)
+  //     }
+  // },
   mounted () {
     this.$store.dispatch('getSkills');
+    // console.log(this.$store.getters.skillName)
   }
 }
 </script>

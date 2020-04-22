@@ -8,10 +8,10 @@ export default {
   data () {
     return {
       data: {
-        labels: ['HTML','CSS','Javascript','jQuery','Vue','SCSS'],
+        labels: [],
         datasets: [
           {
-            data: [50, 50, 20, 30, 30, 40],
+            data: [],
             backgroundColor: [
               'rgba(181, 26, 26, 0.25)',
               'rgba(54, 162, 235, 1)',
@@ -50,18 +50,20 @@ export default {
       return this.$store.state.skills
       }
   },*/
-  /*created () {
-    this.getSkills()
-  },*/
+  // async created () {
+
+  // },
   mounted () {
+    this.getChartName()
     this.renderChart(this.data, this.options)
   },
-  /*methods:{
-    getSkills(){
-      const skills = this.$store.state.skills
-      this.data.labels = skills
-      console.log('abc')
+  methods:{
+    getChartName(){
+      const names = this.$store.getters.skillName(0)
+      this.data.labels = names
+      const scores = this.$store.getters.skillScore(0)
+      this.data.datasets[0].data = scores
     }
-  }*/
+  }
 }
 </script>
