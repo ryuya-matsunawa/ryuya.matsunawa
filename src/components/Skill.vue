@@ -85,7 +85,7 @@
     </div>
     <div id="skillGraph">
       <div
-        v-if="isFrontActive"
+        v-if="isFrontActive && loaded"
       >
         <FrontChart />
       </div>
@@ -129,6 +129,9 @@ export default {
     },
     isDevOpsActive() {
       return this.currentChart=='devops';
+    },
+    loaded(){
+      return this.$store.state.loaded
     }
   },
   methods: {
@@ -291,9 +294,10 @@ export default {
   }
 
   #skillGraph {
-    width: 40%;
+    width: 41%;
     height: 40%;
     margin: 20px auto;
+    padding: 0 50px;
   }
 }
 

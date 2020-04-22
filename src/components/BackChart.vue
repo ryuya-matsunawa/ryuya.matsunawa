@@ -8,25 +8,12 @@ export default {
   data () {
     return {
       data: {
-        labels: ['Java', 'Ruby', 'RubyOnRails', 'MySQL', 'Python'],
+        labels: [],
         datasets: [
           {
-            label: 'Back-end',
-            data: [30, 20, 50, 20, 40],
-            backgroundColor: [
-              'rgba(15, 136, 57, 0.25)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)'
-            ],
-            borderColor: [
-              'rgba(15, 136, 57, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)'
-            ],
+            data: [],
+            backgroundColor: [],
+            borderColor: [],
             borderWidth: 1
           }
         ]
@@ -47,7 +34,20 @@ export default {
     }
   },
   mounted () {
+    this.getChartName()
     this.renderChart(this.data, this.options)
+  },
+  methods:{
+    getChartName(){
+      const names = this.$store.getters.skillName(1)
+      this.data.labels = names
+      const scores = this.$store.getters.skillScore(1)
+      this.data.datasets[0].data = scores
+      const color = this.$store.getters.skillColor(1)
+      this.data.datasets[0].backgroundColor = color
+      const border = this.$store.getters.skillColor(1)
+      this.data.datasets[0].borderColor = border
+    }
   }
 }
 </script>
