@@ -26,7 +26,7 @@ export default new Vuex.Store({
   getters: {
     skillName: (state) => (index) => {
       const skillNameArray = []
-      if(state.skills[index]){
+      if(state.skills){
         state.skills[index].skill.forEach((Skill) => {
           skillNameArray.push(Skill.name)
         })
@@ -36,11 +36,29 @@ export default new Vuex.Store({
     skillScore: (state) => (index) => {
       const skillScoreArray = []
       if(state.skills[index]){
-        state.skills[index].skill.forEach((Score) => {
-          skillScoreArray.push(Score.score)
+        state.skills[index].skill.forEach((Skill) => {
+          skillScoreArray.push(Skill.score)
         })
       }
       return skillScoreArray
+    },
+    skillColor: (state) => (index) => {
+      const skillColorArray = []
+      if(state.skills[index]){
+        state.skills[index].skill.forEach((Skill) => {
+          skillColorArray.push(Skill.backgroundColor)
+        })
+      }
+      return skillColorArray
+    },
+    borderColor: (state) => (index) => {
+      const borderColorArray = []
+      if(state.skills[index]){
+        state.skills[index].skill.forEach((Skill) => {
+          borderColorArray.push(Skill.borderColor)
+        })
+      }
+      return borderColorArray
     }
   }
   }

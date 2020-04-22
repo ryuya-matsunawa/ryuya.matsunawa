@@ -12,16 +12,8 @@ export default {
         datasets: [
           {
             data: [],
-            backgroundColor: [
-              'rgba(87, 16, 131, 0.25)'
-            ],
-            borderColor: [
-              'rgba(87, 16, 131, 1)',
-              'rgba(54, 162, 235, 1)',
-              'rgba(255, 206, 86, 1)',
-              'rgba(75, 192, 192, 1)',
-              'rgba(153, 102, 255, 1)'
-            ],
+            backgroundColor: [],
+            borderColor: [],
             borderWidth: 1
           }
         ]
@@ -51,6 +43,10 @@ export default {
       this.data.labels = names
       const scores = this.$store.getters.skillScore(2)
       this.data.datasets[0].data = scores
+      const color = this.$store.getters.skillColor(2)
+      this.data.datasets[0].backgroundColor = color
+      const border = this.$store.getters.skillColor(2)
+      this.data.datasets[0].borderColor = border
     }
   }
 }

@@ -294,7 +294,7 @@ export default {
   }
 
   #skillGraph {
-    width: 40%;
+    width: 41%;
     height: 40%;
     margin: 20px auto;
     padding: 0 50px;
