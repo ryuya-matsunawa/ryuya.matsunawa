@@ -8,7 +8,7 @@ export default {
   data () {
     return {
       data: {
-        labels: ['HTML', 'CSS', 'Javascript','jQuery', 'SCSS', 'Vue'],
+        labels: ['HTML','CSS','Javascript','jQuery','Vue','SCSS'],
         datasets: [
           {
             data: [50, 50, 20, 30, 30, 40],
@@ -45,8 +45,23 @@ export default {
 }
     }
   },
+  /*computed:{
+    skills : function(){
+      return this.$store.state.skills
+      }
+  },*/
+  /*created () {
+    this.getSkills()
+  },*/
   mounted () {
     this.renderChart(this.data, this.options)
-  }
+  },
+  /*methods:{
+    getSkills(){
+      const skills = this.$store.state.skills
+      this.data.labels = skills
+      console.log('abc')
+    }
+  }*/
 }
 </script>
