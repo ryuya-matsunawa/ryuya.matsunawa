@@ -22,7 +22,7 @@ export default new Vuex.Store({
   //commitでsetSkillsを呼び出す
   actions: {
     getSkills: function({commit}){
-      const functionsUrl = 'https://us-central1-' + process.env.VUE_APP_FUNCTIONS_API + '.cloudfunctions.net/skillcategories';
+      const functionsUrl = 'https://us-central1-'+ process.env.VUE_APP_FUNCTIONS_API + '.cloudfunctions.net/skillcategories';
       console.log(process.env.VUE_APP_FUNCTIONS_API)
       return axios.get(functionsUrl)
           .then(response => {
