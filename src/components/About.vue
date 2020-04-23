@@ -27,6 +27,7 @@
         内定者サイトで紹介していただきました！作ってくださった方々ありがとうございます！
       </p>
       <a
+        id="profileLink"
         href="https://www.seattleconsulting.co.jp/team20/person/person23.html"
       >https://www.seattleconsulting.co.jp/team20/person/person23.html</a>
     </div>
@@ -53,10 +54,10 @@
 #aboutTitle {
   color: #20879f;
   font-weight: bold;
-  font-size: 18pt;
+  font-size: 23pt;
   font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-  padding-bottom: 10px;
-  text-shadow: 0 0 2px gray;
+  padding-bottom: 40px;
+  text-shadow: 0 0 4px gray;
 }
 
 #aboutExplain {
@@ -67,6 +68,11 @@
   word-break: break-all;
   margin: auto;
   text-align: left;
+
+  #profileLink {
+    color: #20879f;
+    font-weight: bold;
+  }
 }
 
 a {

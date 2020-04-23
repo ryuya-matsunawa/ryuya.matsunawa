@@ -1,17 +1,16 @@
 <template>
   <div>
-    <div class="shutter" />
-    <section>
-      <div id="app">
-        <Header />
-        <Main />
-        <About />
-        <Skill />
-        <Vision />
-        <contact />
-        <Footer />
-      </div>
-    </section>
+    <!-- <div class="shutter" /> -->
+    <div id="app">
+      <Header />
+      <Main />
+      <About />
+      <Skill />
+      <Vision />
+      <contact />
+      <!-- <div>{{ test }}</div> -->
+      <Footer />
+    </div>
   </div>
 </template>
 
@@ -34,8 +33,11 @@ export default {
     Vision,
     contact,
     Footer
+  },
+  mounted () {
+    this.$store.dispatch('getSkills');  //actionsのgetSkillsを呼び出す
   }
-};
+}
 </script>
 
 <style lang="scss">

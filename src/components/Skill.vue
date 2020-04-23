@@ -23,28 +23,26 @@
     </label>
     <div
       id="skillCategories"
-      onfocus="this.blur()"
     >
       <ul>
         <li>
           <span
             id="front"
+            :class="{'front-change': isFrontActive}"
             @click="setCurrentChart('front')"
           >
             Front-end
           </span>
-        </li>
-        <li>
           <span
             id="back"
+            :class="{'back-change': isBackActive}"
             @click="setCurrentChart('back')"
           >
             Back-end
           </span>
-        </li>
-        <li>
           <span
             id="DevOps"
+            :class="{'dev-change': isDevOpsActive}"
             @click="setCurrentChart('devops')"
           >
             DevOps
@@ -87,7 +85,7 @@
     </div>
     <div id="skillGraph">
       <div
-        v-if="isFrontActive"
+        v-if="isFrontActive && loaded"
       >
         <FrontChart />
       </div>
@@ -131,6 +129,9 @@ export default {
     },
     isDevOpsActive() {
       return this.currentChart=='devops';
+    },
+    loaded(){
+      return this.$store.state.loaded
     }
   },
   methods: {
@@ -155,9 +156,9 @@ export default {
   #skillTitle {
     color: #20879f;
     font-weight: bold;
-    font-size: 18pt;
+    font-size: 23pt;
     font-family: "Noto Sans Japanese", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
-    padding-bottom: 10px;
+    padding-bottom: 40px;
     text-shadow: 0 0 6px gray;
   }
 
@@ -181,14 +182,34 @@ export default {
   }
 
   #skillCategories {
-    padding: 20px 0;
+    padding: 40px 0 20px 0;
 
     li {
       display: inline-block;
-      margin: 0 10px;
 
       span {
         outline: none;
+        padding: 10px;
+        box-shadow: 2px 2px  rgba($color:gray, $alpha: 1);
+        transition: all 0.2s;
+        border: 1px solid gray;
+        margin: 0 10px;
+      }
+
+      :hover {
+        box-shadow: 2px 2px  rgba($color:gray, $alpha: 0);
+      }
+
+      :first-child:hover {
+        background-color: rgba(181, 26, 26, 0.25);
+      }
+
+      :nth-of-type(2):hover {
+        background-color: rgba(15, 136, 57, 0.25);
+      }
+
+      :last-child:hover {
+        background-color: rgba(87, 16, 131, 0.25);
       }
     }
 
@@ -208,6 +229,21 @@ export default {
       color: #571083;
       font-size: 18px;
       cursor: pointer;
+    }
+
+    .front-change {
+      background-color: rgba(181, 26, 26, 0.25);
+      box-shadow: none;
+    }
+
+    .back-change {
+      background-color: rgba(15, 136, 57, 0.25);
+      box-shadow: none;
+    }
+
+    .dev-change {
+      background-color: rgba(87, 16, 131, 0.25);
+      box-shadow: none;
     }
   }
 
@@ -258,9 +294,10 @@ export default {
   }
 
   #skillGraph {
-    width: 40%;
+    width: 41%;
     height: 40%;
-    margin: 0 auto;
+    margin: 20px auto;
+    padding: 0 50px;
   }
 }
 
