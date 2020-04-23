@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="shutter" />
+    <!-- <div class="shutter" /> -->
     <div id="app">
       <Header />
       <Main />
@@ -34,14 +34,8 @@ export default {
     contact,
     Footer
   },
-  // computed:{
-  //   test(){
-  //       return this.$store.getters.skillName(1)
-  //     }
-  // },
   mounted () {
-    this.$store.dispatch('getSkills');
-    // console.log(this.$store.getters.skillName)
+    this.$store.dispatch('getSkills');  //actionsのgetSkillsを呼び出す
   }
 }
 </script>

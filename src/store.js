@@ -6,18 +6,25 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    skills:[],
+    skillcategories:[],
     loaded:false
   },
+  //response.dataがfunction(state,skills)のskillsに入る
+  //state.skillsでstateの中のskillsを指定し,その中にresponse.dataをいれる
+  //stateが変更された後loadedがtrueになることでグラフの表示が上手くいく
   mutations: {
-    setSkills : function(state,skills) {
-    state.skills = skills
+    setSkills : function(state,skillcategories) {
+    state.skillcategories = skillcategories
     state.loaded = true
     }
   },
+  //axiosでデータを取得して,そのデータをresponse.dataに入れる
+  //commitでsetSkillsを呼び出す
   actions: {
     getSkills: function({commit}){
-      return axios.get('https://us-central1-portfolio-d9ccd.cloudfunctions.net/skills')
+      const functionsUrl = 'https://us-central1-' + process.env.VUE_APP_FUNCTIONS_API + '.cloudfunctions.net/skillcategories';
+      console.log(process.env.VUE_APP_FUNCTIONS_API)
+      return axios.get(functionsUrl)
           .then(response => {
             commit('setSkills',response.data)
           })
@@ -26,8 +33,8 @@ export default new Vuex.Store({
   getters: {
     skillName: (state) => (index) => {
       const skillNameArray = []
-      if(state.skills){
-        state.skills[index].skill.forEach((Skill) => {
+      if(state.skillcategories){
+        state.skillcategories[index].skills.forEach((Skill) => {
           skillNameArray.push(Skill.name)
         })
       }
@@ -35,8 +42,8 @@ export default new Vuex.Store({
     },
     skillScore: (state) => (index) => {
       const skillScoreArray = []
-      if(state.skills[index]){
-        state.skills[index].skill.forEach((Skill) => {
+      if(state.skillcategories[index]){
+        state.skillcategories[index].skills.forEach((Skill) => {
           skillScoreArray.push(Skill.score)
         })
       }
@@ -44,8 +51,8 @@ export default new Vuex.Store({
     },
     skillColor: (state) => (index) => {
       const skillColorArray = []
-      if(state.skills[index]){
-        state.skills[index].skill.forEach((Skill) => {
+      if(state.skillcategories[index]){
+        state.skillcategories[index].skills.forEach((Skill) => {
           skillColorArray.push(Skill.backgroundColor)
         })
       }
@@ -53,8 +60,8 @@ export default new Vuex.Store({
     },
     borderColor: (state) => (index) => {
       const borderColorArray = []
-      if(state.skills[index]){
-        state.skills[index].skill.forEach((Skill) => {
+      if(state.skillcategories[index]){
+        state.skillcategories[index].skills.forEach((Skill) => {
           borderColorArray.push(Skill.borderColor)
         })
       }
