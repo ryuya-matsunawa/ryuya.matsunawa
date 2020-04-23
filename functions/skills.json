@@ -1,8 +1,8 @@
 {
-  "skills" : [
+  "skillcategories" : [
     {
       "category" : "Front-end",
-      "skill" :[ {
+      "skills" :[ {
         "name" : "HTML",
         "score" : 50,
         "backgroundColor":"rgba(181, 26, 26, 0.25)",
@@ -36,7 +36,7 @@
     },
     {
     "category" :"Back-end",
-      "skill" :[{
+      "skills" :[{
         "name" : "Java",
         "score" : 30,
         "backgroundColor":"rgba(15, 136, 57, 0.25)",
@@ -65,7 +65,7 @@
     },
     {
       "category" :"Devops",
-      "skill" :[{
+      "skills" :[{
         "name" : "Linux",
         "score" : 20,
         "backgroundColor":"rgba(87, 16, 131, 0.25)",

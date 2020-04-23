@@ -1,5 +1,21 @@
 {
   "projects": {
     "default": "portfolio-d9ccd"
+  },
+  "targets": {
+    "portfolio-d9ccd": {
+      "hosting": {
+        "portfolio": [
+          "portfolio-d9ccd"
+        ]
+      }
+    },
+    "portfolio-demo-mvsdm": {
+      "hosting": {
+        "portfolio": [
+          "portfolio-demo-mvsdm"
+        ]
+      }
+    }
   }
 }

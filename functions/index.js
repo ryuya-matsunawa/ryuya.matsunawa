@@ -15,18 +15,18 @@ app.get('/', (req, res) => {
   res.set('Access-Control-Allow-Methods', 'GET, HEAD, OPTIONS, POST');
 
   // realtime databaseからスキルデータを取得する
-  let skills = []
-  const query = admin.database().ref("skills").orderByKey();
+  let skillcategories = []
+  const query = admin.database().ref("skillcategories").orderByKey();
   query.once("value").then(snapshot => {
     // 取得したデータを１件ずつ配列に設定する
     snapshot.forEach(childSnapshot => {
       // 取得したデータを１件ずつ配列に設定する
       let skill = childSnapshot.val();
       skill.key = childSnapshot.key;
-      skills.push(skill);
+      skillcategories.push(skill);
     });
     // 取得結果を返す
-    return res.send(skills);
+    return res.send(skillcategories);
   })
     .catch(error => {
       // 取得時にエラーがでた場合にエラー文字列を返す
@@ -35,7 +35,7 @@ app.get('/', (req, res) => {
 });
 
 // regionを指定してファンクションを定義(CORS対策)
-exports.skills = functions.region('us-central1').https.onRequest(app);
+exports.skillcategories = functions.region('us-central1').https.onRequest(app);
 
 
 // // Create and Deploy Your First Cloud Functions
