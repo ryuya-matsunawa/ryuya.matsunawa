@@ -2,7 +2,6 @@
   <div id="drawerSection">
     <span
       id="drawerButton"
-      class="css-bar"
     />
     <ul id="drawerMenuSection">
       <li
