@@ -1,95 +1,69 @@
 {
   "skillcategories" : [
     {
-      "category" : "Front-end",
+      "category" : "front-end",
+      "color" : "rgba(181, 26, 26, 0.25)",
+      "borderColor" : "rgba(181, 26, 26, 1)",
       "skills" :[ {
         "name" : "HTML",
-        "score" : 50,
-        "backgroundColor":"rgba(181, 26, 26, 0.25)",
-        "borderColor": "rgba(255, 99, 132, 1)"
+        "score" : 5
       },{
         "name" : "CSS",
-        "score" : 50,
-        "backgroundColor":"rgba(54, 162, 235, 1)",
-        "borderColor": "rgba(54, 162, 235, 1)"
+        "score" : 5
       },{
         "name" : "Javascript",
-        "score" : 20,
-        "backgroundColor": "rgba(255, 206, 86, 1)",
-        "borderColor": "rgba(255, 206, 86, 1)"
+        "score" : 2
       },{
         "name" : "jQuery",
-        "score" : 30,
-        "backgroundColor": "rgba(75, 192, 192, 1)",
-        "borderColor": "rgba(75, 192, 192, 1)"
+        "score" : 3
       },{
         "name" : "SCSS",
-        "score" : 30,
-        "backgroundColor": "rgba(153, 102, 255, 1)",
-        "borderColor": "rgba(153, 102, 255, 1)"
+        "score" : 3
       },{
         "name" : "Vue",
-        "score" : 40,
-        "backgroundColor": "rgba(255, 166, 0, 1)",
-        "borderColor": "rgba(255, 166, 0, 1)"
+        "score" : 4
       }]
     },
     {
-    "category" :"Back-end",
+    "category" :"back-end",
+    "color" : "rgba(15, 136, 57, 0.25)",
+    "borderColor" : "rgba(15, 136, 57, 1)",
       "skills" :[{
         "name" : "Java",
-        "score" : 30,
-        "backgroundColor":"rgba(15, 136, 57, 0.25)",
-        "borderColor":"rgba(15, 136, 57, 1)"
+        "score" : 3
       },{
         "name" : "Ruby",
-        "score" : 20,
-        "backgroundColor":"rgba(54, 162, 235, 1)",
-        "borderColor":"rgba(54, 162, 235, 1)"
+        "score" : 2
       },{
         "name" : "RubyOnRails",
-        "score" : 50,
-        "backgroundColor":"rgba(255, 206, 86, 1)",
-        "borderColor":"rgba(255, 206, 86, 1)"
+        "score" : 5
       },{
         "name" : "MySQL",
-        "score" : 20,
-        "backgroundColor":"rgba(75, 192, 192, 1)",
-        "borderColor":"rgba(75, 192, 192, 1)"
+        "score" : 2
       },{
         "name" : "Python",
-        "score" : 40,
-        "backgroundColor":"rgba(153, 102, 255, 1)",
-        "borderColor":"rgba(153, 102, 255, 1)"
+        "score" : 4
       }]
     },
     {
-      "category" :"Devops",
+      "category" :"devops",
+      "color" : "rgba(87, 16, 131, 0.25)",
+      "borderColor" : "rgba(87, 16, 131, 1)",
       "skills" :[{
         "name" : "Linux",
-        "score" : 20,
-        "backgroundColor":"rgba(87, 16, 131, 0.25)",
-        "borderColor":"rgba(87, 16, 131, 1)"
+        "score" : 2
       },{
         "name" : "Git",
-        "score" : 20,
-        "backgroundColor":"rgba(54, 162, 235, 1)",
-        "borderColor":"rgba(54, 162, 235, 1)"
+        "score" : 2
       },{
         "name" : "GitHub",
-        "score" : 30,
-        "backgroundColor":"rgba(255, 206, 86, 1)",
-        "borderColor":"rgba(255, 206, 86, 1)"
+        "score" : 3
       },{
         "name" : "Firebase",
-        "score" : 20,
-        "backgroundColor":"rgba(75, 192, 192, 1)",
-        "borderColor":"rgba(75, 192, 192, 1)"
+        "score" : 2
       },{
         "name" : "AWS",
-        "score" : 30,
-        "backgroundColor":"rgba(153, 102, 255, 1)",
-        "borderColor":"rgba(153, 102, 255, 1)"
+        "score" : 3
       }]
   }
   ]}

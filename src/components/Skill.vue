@@ -29,21 +29,21 @@
           <span
             id="front"
             :class="{'front-change': isFrontActive}"
-            @click="setCurrentChart('front')"
+            @click="setChartCategory('front-end')"
           >
             Front-end
           </span>
           <span
             id="back"
             :class="{'back-change': isBackActive}"
-            @click="setCurrentChart('back')"
+            @click="setChartCategory('back-end')"
           >
             Back-end
           </span>
           <span
             id="DevOps"
             :class="{'dev-change': isDevOpsActive}"
-            @click="setCurrentChart('devops')"
+            @click="setChartCategory('devops')"
           >
             DevOps
           </span>
@@ -83,60 +83,44 @@
         <li>AWS</li>
       </ul>
     </div>
-    <div id="skillGraph">
-      <div
-        v-if="isFrontActive && loaded"
-      >
-        <FrontChart />
-      </div>
-      <div
-        v-if="isBackActive"
-      >
-        <BackChart />
-      </div>
-      <div
-        v-if="isDevOpsActive"
-      >
-        <DevChart />
-      </div>
+    <div
+      v-if="loaded"
+      id="skillGraph"
+    >
+      <Chart :category="chartCategory" />
     </div>
   </div>
 </template>
 
 <script>
 
-import FrontChart from '../components/FrontChart.vue';
-import BackChart from '../components/BackChart.vue';
-import DevChart from '../components/DevChart.vue';
+import Chart from '../components/Chart.vue';
+import {mapState} from 'vuex';
 
 export default {
   components: {
-    FrontChart,
-    BackChart,
-    DevChart
+    Chart
   },
-  data(){
+  data: function() {
     return {
-      currentChart: 'front'
+      chartCategory: 'front-end'
     }
   },
   computed: {
     isFrontActive() {
-      return this.currentChart=='front';
+      return this.chartCategory=='front-end';
     },
     isBackActive() {
-      return this.currentChart=='back';
+      return this.chartCategory=='back-end';
     },
     isDevOpsActive() {
-      return this.currentChart=='devops';
+      return this.chartCategory=='devops';
     },
-    loaded(){
-      return this.$store.state.loaded
-    }
+    ...mapState(['loaded'])
   },
   methods: {
-    setCurrentChart(chart) {
-      this.currentChart = chart;
+    setChartCategory(category) {
+      this.chartCategory = category;
     }
   }
 }
