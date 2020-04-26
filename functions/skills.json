@@ -11,11 +11,11 @@
         "name" : "CSS",
         "score" : 5
       },{
-        "name" : "Javascript",
-        "score" : 2
-      },{
         "name" : "jQuery",
         "score" : 3
+      },{
+        "name" : "Javascript",
+        "score" : 2
       },{
         "name" : "SCSS",
         "score" : 3

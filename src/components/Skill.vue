@@ -7,7 +7,7 @@
       <p>
         スキルをまとめました。フロントエンドのスキルはポートフォリオ実装でかなり力がつきました。
         特に、Vue.jsは内定者課題で使おうとしていて、理解できなかったものでしたが、
-        今回の実装である程度理解できました。Backendに関してはまだまだ経験不足で
+        今回の実装である程度理解できました。バックエンドに関してはまだまだ経験不足で
         今後学ぶものとしてリストアップしています。AIに興味があるので、特にPythonの知識を深めていきたいです。<br>
         下のグラフの評価基準として、Front-endはポートフォリオ実装でどれだけ使えたか(1~5段階)、
         Back-endは今までどれだけ使ったことがあるか(1~5段階)、DevOpsはBack-endと同じですが、
@@ -197,37 +197,41 @@ export default {
       }
     }
 
-    #front {
-      color: #b51a1a;
+    #front,
+    #back,
+    #DevOps {
       font-size: 18px;
       cursor: pointer;
+    }
+
+    #front {
+      color: #b51a1a;
     }
 
     #back {
       color: #0f8839;
-      font-size: 18px;
-      cursor: pointer;
     }
 
     #DevOps {
       color: #571083;
-      font-size: 18px;
-      cursor: pointer;
     }
 
     .front-change {
       background-color: rgba(181, 26, 26, 0.25);
       box-shadow: none;
+      cursor: default !important;
     }
 
     .back-change {
       background-color: rgba(15, 136, 57, 0.25);
       box-shadow: none;
+      cursor: default !important;
     }
 
     .dev-change {
       background-color: rgba(87, 16, 131, 0.25);
       box-shadow: none;
+      cursor: default !important;
     }
   }
 
@@ -278,8 +282,6 @@ export default {
   }
 
   #skillGraph {
-    width: 41%;
-    height: 40%;
     margin: 20px auto;
     padding: 0 50px;
   }
@@ -294,6 +296,20 @@ export default {
 @media (max-width: 1000px) {
   #skillExplain {
     width: 75%;
+  }
+}
+
+@media (max-width: 2560px) {
+  #skillGraph {
+    width: 41%;
+    height: 40%;
+  }
+}
+
+@media (max-width: 750px) {
+  #skillGraph {
+    width: 60%;
+    height: 60%;
   }
 }
 </style>

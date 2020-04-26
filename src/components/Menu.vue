@@ -39,7 +39,7 @@
           id="drawerMenuItemLink"
           href="#contactSection"
           @click="clickSmoothScroll()"
-        >contact</a>
+        >Contact</a>
       </li>
     </ul>
   </div>
