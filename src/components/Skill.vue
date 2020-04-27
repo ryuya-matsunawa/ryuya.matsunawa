@@ -180,10 +180,6 @@ export default {
         margin: 0 10px;
       }
 
-      :hover {
-        box-shadow: 2px 2px  rgba($color:gray, $alpha: 0);
-      }
-
       :first-child:hover {
         background-color: rgba(181, 26, 26, 0.25);
       }
