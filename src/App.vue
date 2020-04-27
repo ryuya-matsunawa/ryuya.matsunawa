@@ -1,6 +1,6 @@
 <template>
   <div>
-    <!-- <div class="shutter" /> -->
+    <div class="shutter" />
     <div id="app">
       <Header />
       <Main />
@@ -35,7 +35,7 @@ export default {
     Footer
   },
   mounted () {
-    this.$store.dispatch('getSkills');  //actionsのgetSkillsを呼び出す
+    this.$store.dispatch('updateSkillCategories');  //actionsのgetSkillsを呼び出す
   }
 }
 </script>
