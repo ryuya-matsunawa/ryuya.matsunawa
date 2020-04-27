@@ -39,9 +39,9 @@ export default {
   text-align: center;
 
   #footerScroll {
-    width: 25px;
-    height: 25px;
-    border: 1px solid #06c1e6;
+    width: 30px;
+    height: 30px;
+    border: 1.2px solid #06c1e6;
     border-radius: 50%;
     top: -10px;
     position: relative;
@@ -54,19 +54,4 @@ export default {
     top: -5px;
   }
 }
-
-h3 {
-  margin: 40px 0 0;
-}
-
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-
 </style>

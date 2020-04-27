@@ -7,7 +7,7 @@
       <p>
         スキルをまとめました。フロントエンドのスキルはポートフォリオ実装でかなり力がつきました。
         特に、Vue.jsは内定者課題で使おうとしていて、理解できなかったものでしたが、
-        今回の実装である程度理解できました。Backendに関してはまだまだ経験不足で
+        今回の実装である程度理解できました。バックエンドに関してはまだまだ経験不足で
         今後学ぶものとしてリストアップしています。AIに興味があるので、特にPythonの知識を深めていきたいです。<br>
         下のグラフの評価基準として、Front-endはポートフォリオ実装でどれだけ使えたか(1~5段階)、
         Back-endは今までどれだけ使ったことがあるか(1~5段階)、DevOpsはBack-endと同じですが、
@@ -29,21 +29,21 @@
           <span
             id="front"
             :class="{'front-change': isFrontActive}"
-            @click="setCurrentChart('front')"
+            @click="setChartCategory('front-end')"
           >
             Front-end
           </span>
           <span
             id="back"
             :class="{'back-change': isBackActive}"
-            @click="setCurrentChart('back')"
+            @click="setChartCategory('back-end')"
           >
             Back-end
           </span>
           <span
             id="DevOps"
             :class="{'dev-change': isDevOpsActive}"
-            @click="setCurrentChart('devops')"
+            @click="setChartCategory('devops')"
           >
             DevOps
           </span>
@@ -83,60 +83,44 @@
         <li>AWS</li>
       </ul>
     </div>
-    <div id="skillGraph">
-      <div
-        v-if="isFrontActive && loaded"
-      >
-        <FrontChart />
-      </div>
-      <div
-        v-if="isBackActive"
-      >
-        <BackChart />
-      </div>
-      <div
-        v-if="isDevOpsActive"
-      >
-        <DevChart />
-      </div>
+    <div
+      v-if="loaded"
+      id="skillGraph"
+    >
+      <Chart :category="chartCategory" />
     </div>
   </div>
 </template>
 
 <script>
 
-import FrontChart from '../components/FrontChart.vue';
-import BackChart from '../components/BackChart.vue';
-import DevChart from '../components/DevChart.vue';
+import Chart from '../components/Chart.vue';
+import {mapState} from 'vuex';
 
 export default {
   components: {
-    FrontChart,
-    BackChart,
-    DevChart
+    Chart
   },
-  data(){
+  data: function() {
     return {
-      currentChart: 'front'
+      chartCategory: 'front-end'
     }
   },
   computed: {
     isFrontActive() {
-      return this.currentChart=='front';
+      return this.chartCategory=='front-end';
     },
     isBackActive() {
-      return this.currentChart=='back';
+      return this.chartCategory=='back-end';
     },
     isDevOpsActive() {
-      return this.currentChart=='devops';
+      return this.chartCategory=='devops';
     },
-    loaded(){
-      return this.$store.state.loaded
-    }
+    ...mapState(['loaded'])
   },
   methods: {
-    setCurrentChart(chart) {
-      this.currentChart = chart;
+    setChartCategory(category) {
+      this.chartCategory = category;
     }
   }
 }
@@ -196,10 +180,6 @@ export default {
         margin: 0 10px;
       }
 
-      :hover {
-        box-shadow: 2px 2px  rgba($color:gray, $alpha: 0);
-      }
-
       :first-child:hover {
         background-color: rgba(181, 26, 26, 0.25);
       }
@@ -213,37 +193,41 @@ export default {
       }
     }
 
-    #front {
-      color: #b51a1a;
+    #front,
+    #back,
+    #DevOps {
       font-size: 18px;
       cursor: pointer;
+    }
+
+    #front {
+      color: #b51a1a;
     }
 
     #back {
       color: #0f8839;
-      font-size: 18px;
-      cursor: pointer;
     }
 
     #DevOps {
       color: #571083;
-      font-size: 18px;
-      cursor: pointer;
     }
 
     .front-change {
       background-color: rgba(181, 26, 26, 0.25);
       box-shadow: none;
+      cursor: default !important;
     }
 
     .back-change {
       background-color: rgba(15, 136, 57, 0.25);
       box-shadow: none;
+      cursor: default !important;
     }
 
     .dev-change {
       background-color: rgba(87, 16, 131, 0.25);
       box-shadow: none;
+      cursor: default !important;
     }
   }
 
@@ -294,8 +278,6 @@ export default {
   }
 
   #skillGraph {
-    width: 41%;
-    height: 40%;
     margin: 20px auto;
     padding: 0 50px;
   }
@@ -310,6 +292,20 @@ export default {
 @media (max-width: 1000px) {
   #skillExplain {
     width: 75%;
+  }
+}
+
+@media (max-width: 2560px) {
+  #skillGraph {
+    width: 41%;
+    height: 40%;
+  }
+}
+
+@media (max-width: 750px) {
+  #skillGraph {
+    width: 60%;
+    height: 60%;
   }
 }
 </style>
